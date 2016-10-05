@@ -3,55 +3,29 @@
 
 import random
 from time import sleep
-import sys
-
-# Usage: print(color['white'] + 'string' + color['off'])
-color = {
-    'bold_white':      "\033[1;37m",
-    'bold_yellow':     "\033[1;33m",
-    'bold_green':      "\033[1;32m",
-    'bold_blue':       "\033[1;34m",
-    'bold_cyan':       "\033[1;36m",
-    'bold_red':        "\033[1;31m",
-    'bold_magenta':    "\033[1;35m",
-    'bold_black':      "\033[1;30m",
-    'white':           "\033[0;37m",
-    'yellow':          "\033[0;33m",
-    'green':           "\033[0;32m",
-    'blue':            "\033[0;34m",
-    'cyan':            "\033[0;36m",
-    'red':             "\033[0;31m",
-    'magenta':         "\033[0;35m",
-    'black':           "\033[0;30m",
-    'off':             "\033[0;0m",
-}
-
-
-def print_slowly(text, speed):
-    for c in text:
-        print(c, end=""),
-        sys.stdout.flush()
-        sleep(speed)
 
 
 def arithmetic():
-    # Arithmetic - Non-digit rounds messages
+    # Non-digit rounds messages
     roundnotdigit = ["That's not a number!",
                      "You sure what you typed is a number?",
                      "You do know if you can't type out a number you'll have no chance to do this arithmetic right?",
                      "Psst... It has to be a number!",
                      "Hm... The code doesn't seem to like what you typed. Are you sure it's a number?"]
 
-    # Arithmetic - Negative round numbers
+    # Negative round numbers
     negativenum = ["You can't use a negative number as a round!",
                    ""]
 
-    # Arithmetic - Difficulty input options
+    # If selected 0 rounds
+    norounds = ["Really? You have to at least choose one round!"]
+
+    # Difficulty input options
     easy = ["e", "ea", "eas", "easy"]
     medium = ["m", "me", "med", "medi", "mediu", "medium"]
     hard = ["h", "ha", "har", "hard"]
 
-    # Arithmetic - Easy messages
+    # Easy messages
     easymsg = ["Come on, easy? I thought you would choose something harder... Oh well, let's go!",
                "Easy mode? I guess everyone starts from somewhere...",
                "Aww easy mode? You could do better than that!",
@@ -116,6 +90,8 @@ def arithmetic():
             elif int(rounds) < 0:
                 print(random.choice(negativenum))
                 rounds = input("> ")
+            elif int(rounds) == 0:
+                print(random.choice(norounds))
             else:
                 break
         rounds = int(rounds)  # Converts rounds into a integer
@@ -185,6 +161,7 @@ def arithmetic():
             elif playagain in noagain:
                 playing = "n"
                 break
+                menutime = 1
             else:
                 print(random.choice(other2))
 

@@ -1,54 +1,30 @@
-# Blu's Game Centre - Blu's Adventures v1.0
-# Aiyurn © 2016
-
-'''
-Bill of Player's Rights
-1. Not to be killed without warning
-2. Not to be given horribly unclear hints
-3. To be able to win without experience of past lives
-4. To be able to win without knowledge of future events
-5. Not to have the game closed off without warning
-6. Not to need to do unlikely things
-7. Not to need to do boring things for the sake of it
-8. Not to have to type exactly the right verb
-9. To be allowed reasonable synonyms
-10. To have a decent parser
-11. To have reasonable freedom of action
-12. Not to depend much on luck
-13. To be able to understand a problem once it is solved
-14. Not to be given too many red herrings
-15. To have a good reason why something is impossible
-16. Not to need to be American
-17. To know how the game is getting on
-'''
-
-import time
 import random
+from time import sleep
 
 # Start - program varible outputs
-start1 = ["begin","b","start","s"]
-start2 = ["quit","q","leave","l"]
+start1 = ["begin", "b", "start", "s"]
+start2 = ["quit", "q", "leave", "l"]
 
 # Start - Begin messages
 begin1 = ["Let the journey begin!",
-        "You're coming? Well then what are you waiting for? Let's go!",
-        "You're joining us? That makes three! Come on!",
-        "Yay! Someone else who wants to come with us!",
-        "We're going to have so much fun!"]
+          "You're coming? Well then what are you waiting for? Let's go!",
+          "You're joining us? That makes three! Come on!",
+          "Yay! Someone else who wants to come with us!",
+          "We're going to have so much fun!"]
 
 # Start - Leaving messages
 quit1 = ["Aww. Tailstar really wanted you to come...",
-        "I thought you'd be wanting to come...",
-        "Oh... Well, you're always welcome to join when you want to!",
-        "I guess I never said you had to come with us... Although I really hoped you did...",
-        "But... What did I say for you to not come with us?"]
+         "I thought you'd be wanting to come...",
+         "Oh... Well, you're always welcome to join when you want to!",
+         "I guess I never said you had to come with us... Although I really hoped you did...",
+         "But... What did I say for you to not come with us?"]
 
 # Start - Other messages
 other1 = ["I thought I said there we're only two options, 'begin' or 'quit'?",
-        "I think you misspelled something...\nYou sure you typed either 'begin' or 'leave'?",
-        "And here I thought Tailstar couldn't spell...\nLike I said, do you want to 'begin' or 'leave'?",
-        "I don't think I said anything else other than 'begin' or 'quit'?",
-        "Come on! Let's go already! Do you want to 'begin' or 'quit'?"]
+          "I think you misspelled something...\nYou sure you typed either 'begin' or 'leave'?",
+          "And here I thought Tailstar couldn't spell...\nLike I said, do you want to 'begin' or 'leave'?",
+          "I don't think I said anything else other than 'begin' or 'quit'?",
+          "Come on! Let's go already! Do you want to 'begin' or 'quit'?"]
 
 # Chapter select - Blu's messages
 blu1 = ["The journey finally begins! Let's go!",
@@ -78,53 +54,59 @@ other2 = ["There are only three chapters you know... '01', '02', and '03'.",
 chapter = ["01", "1", "02", "2", "03", "3"]
 locked = ["02", "2", "03", "3"]
 
+
 def islocked():
     if chapsel in locked:
         return True
     else:
         return False
 
-def bluadventure():
-    # Introduction text
-    print("Welcome to Blu's Adventure!\n"
-          "Come on Tailstar we have a person who wants to join us!\n"
-          "To join me in my adventure, type 'begin'! To leave, type 'quit'")
 
-    # Start
-    program = input("> ")
-    while True:
-        if program in start1:
-            print(random.choice(begin1))
-            time.sleep(2)
-            print("\n"*2)
-            break
-        elif program in start2:
-            print(random.choice(quit1))
-            time.sleep(2)
-            quit()
-        else:
-            print(random.choice(other1))
-            program = input("> ")
+# Introduction text
+print("Welcome to Blu's Adventure!\n"
+      "Come on Tailstar we have a person who wants to join us!\n"
+      "To join me in my adventure, type 'begin'! To leave, type 'quit'")
 
-    # Chapter Select
-    print("Chapter Select:\n",
-          "'01' - The Tale of Blu\n",
-          "'02' - The Adventure Begins! [LOCKED]\n",
-          "'03' - Finding your first Pokémon [LOCKED]")
+# Start
+program = input("> ")
+while True:
+    if program in start1:
+        print(random.choice(begin1))
+        sleep(2)
+        print("\n" * 2)
+        break
+    elif program in start2:
+        print(random.choice(quit1))
+        sleep(2)
+        quit()
+    else:
+        print(random.choice(other1))
+        program = input("> ")
 
-    chapsel = input("> ")
-    while True:
-        if chapsel in chapter:
-            if islocked():
-                print(random.choice(locked1))
-                chapsel = input("> ")
-            else:
-                print(random.choice(blu1))
-                time.sleep(2)
-                print("\n"*10)
-                break
-        else:
-            print(random.choice(other2))
+# Chapter Select
+print("Chapter Select:\n",
+      "'01' - The Tale of Blu\n",
+      "'02' - The Adventure Begins! [LOCKED]\n",
+      "'03' - Finding your first Pokémon [LOCKED]")
+
+chapsel = input("> ")
+while True:
+    if chapsel in chapter:
+        if islocked():
+            print(random.choice(locked1))
             chapsel = input("> ")
+        else:
+            print(random.choice(blu1))
+            sleep(2)
+            print("\n" * 10)
+            break
+    else:
+        print(random.choice(other2))
+        chapsel = input("> ")
 
-    # Chapter 01 - The Tale of Blu
+print("Oh I completely forgot! Tailstar and I still don't know your name yet!\n"
+      "Do you want to tell us your name? You don't have to, but if you don't\n"
+      "give us your name we'll just use Tailstar as your name! Who knows,\n"
+      "maybe you like Tailstar? ")
+
+# Chapter 01 - The Tale of Blu

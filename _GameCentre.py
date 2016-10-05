@@ -3,25 +3,8 @@
 
 import random
 from time import sleep
-import sys
 from games import arithmetic,numguess,bluadventure
-
-class bcolors:
-    HEADER = '\033[95m'
-    OKBLUE = '\033[94m'
-    OKGREEN = '\033[92m'
-    WARNING = '\033[93m'
-    FAIL = '\033[91m'
-    ENDC = '\033[0m'
-    BOLD = '\033[1m'
-    UNDERLINE = '\033[4m'
-
-
-def print_slowly(text, speed):
-    for c in text:
-        print(c, end=""),
-        sys.stdout.flush()
-        sleep(speed)
+from definitions import sprint
 
 # Introduction - Variables
 gamechoice = ""
@@ -56,30 +39,33 @@ other1 = ["Hey that not an option!",
 
 # --------------- CODE BEGINS HERE ---------------
 
+sprint("Blu's Game Centre v1.0\n", 0.07, 0.7)
+sprint("Aiyurn (C) 2016\n\n", 0.07, 1.5)
 
 while gamechoice == "":
     # Introduction text
     if menutime < 1:
-        print_slowly("Blu's Game Centre v1.0\n", 0.1)
-        print_slowly("Aiyurn (C) 2016\n\n", 0.1)
-        sleep(1.5)
-        print_slowly("Welcome to my Game Centre!\n", 0.01)
-        sleep(1)
-        print_slowly("I'm Blu, and I'll be helping you out with things in this program!\n", 0.01)
-        sleep(3)
-        print("Here are the games you can choose from:\n"
-              "1) Arithmetic (Multiplication)\n"
-              "2) Number Guess\n"
-              "3) Find-a-word [IN DEVELOPMENT]\n"
-              "4) Blu's Adventures [BETA]\n"
-              "5) Guess the country [IN DEVELOPMENT]")
+        sprint("Welcome to my Game Centre!\n", 0.045, 1)
+        sprint("I'm Blu, ", 0.045, 0.45)
+        sprint("and I'll be joining you in the games you play in this program!\n", 0.045, 1)
+        sprint("Here are the games you can choose from:\n", 0.045, 0.3)
+        sprint("1) Arithmetic (Multiplication)\n", 0.03, 0.25)
+        sprint("2) Number Guess\n", 0.03, 0.25)
+        sprint("3) Find-a-word [IN DEVELOPMENT]\n", 0.03, 0.25)
+        sprint("4) Blu's Adventures [BETA]\n", 0.03, 0.25)
+        sprint("5) Tactical World [IN DEVELOPMENT]\n", 0.03, 0.3)
+        sprint("6) Word Jam [IN DEVELOPMENT]\n", 0.03, 0.3)
+        sprint("So, ", 0.045, 0.45)
+        sprint("what game do you want to play?\n", 0.045, 0.2)
     else:
         print("And we're back at the menu again! What game do you want to play now?")
         print("Here are the games:\n"
               "1) Arithmetic (Multiplication)\n"
               "2) Number Guess\n"
               "3) Find-a-word [IN DEVELOPMENT]\n"
-              "4) Blu's Adventures [BETA]")
+              "4) Blu's Adventures [BETA]\n"
+              "5) Guess the country [IN DEVELOPMENT\n"
+              "6) Letter Scramble [IN DEVELOPMENT")
 
     # Start
     gamechoice = input("> ")
@@ -99,6 +85,9 @@ while gamechoice == "":
             numguess()
             gamechoice = ""
             break
+
+        elif gamechoice == 'quit':
+            quit()
 
 #       elif gamechoice in game_findaword:
 #       print(random.choice(findaword))
