@@ -1,34 +1,13 @@
-import random
-from time import sleep
+from random import randint
+from time import sleep as s
 from definitions import sprint
 
 # Start - program varible outputs
 start1 = ["begin", "b", "start", "s"]
 start2 = ["quit", "q", "leave", "l"]
 
-# Chapter select - Blu's messages
-blu1 = ["The journey finally begins! Let's go!",
-        "You have no problems with starting do you? No? Ok, let's go!",
-        "Now with that all over, let's start!",
-        "I wonder how this story will go...",
-        "Hm... I've run out of things to say!"]
-
 blu2 = []
 blu3 = []
-
-# Chapter select - Locked chapters
-locked1 = ["Tailstar locked these chapters for a reason...",
-           "Don't you ever wonder why there is 'LOCKED' on the chapter?",
-           "Ok, this time try choosing something that isn't locked.",
-           "I can't start that chapter if it's locked!",
-           "Maybe finish the unlocked chapters first before going on to the locked ones..."]
-
-# Chapter select - Other chapters
-other2 = ["There are only three chapters you know... '01', '02', and '03'.",
-          "I feel like I'm talking to myself here! Well, maybe I am, but there's only three chapters to choose from!",
-          "I think you just typed a non-existent chapter... There are only three chapters.",
-          "Are you purposely typing the wrong characters just to get me to talk? If so it isn't working!",
-          "I have this odd feeling that you might secretly be Tailstar... Or is that just me?"]
 
 # Chapter select - Total chapters
 chapter = ["01", "1", "02", "2", "03", "3"]
@@ -43,45 +22,47 @@ def islocked():
 
 
 # Introduction text
-sprint("Welcome to Blu's Adventure!\n", "default", 1.5)
-sprint("Come on Tailstar we have a person who wants to join us!\n", "default", "period")
+sprint("Welcome to Blu's Adventure!\n", "default", 1.2)
+sprint("Come on Tailstar we have a person who wants to join us!\n", "default", "punctuation")
 sprint("To join me in my adventure, ", "default", "comma")
-sprint("type 'begin'! ", "default", "period")
+sprint("type ", "default", "break")
+sprint("'begin'! ", "default", "punctuation")
 sprint("To leave, ", "default", "comma")
-sprint("type 'quit'.\n", "default", "period")
+sprint("type ", "default", "break")
+sprint("'quit'.\n", "default", "input")
 
 # Start
 program = input("> ")
 while True:
-    value = random.randint(1, 5)
+    value = randint(1, 5)
     if program in start1:
         if value == 1:
-            sprint("Let the journey begin!\n", "default", "period")
-            sleep(1)
+            sprint("Let the journey begin!\n", "default", "punctuation")
+            s(1)
             print("\n" * 2)
             break
         elif value == 2:
-            sprint("You're coming? ", "default", "period")
-            sprint("Well then what are you waiting for? ", "default", "period")
-            sprint("Let's go!\n", "default", "period")
-            sleep(1)
+            sprint("You're coming? ", "default", "punctuation")
+            sprint("Well then what are you waiting for? ", "default", "puncutation")
+            sprint("Let's go!\n", "default", "punctuation")
+            s(1)
             print("\n" * 2)
             break
         elif value == 3:
-            sprint("You're joining us? ", "default", "period")
-            sprint("That makes three! ", "default", "period")
-            sprint("Come on!\n", "default", "period")
-            sleep(1)
+            sprint("You're joining us? ", "default", "punctuation")
+            sprint("That makes three! ", "default", "punctuation")
+            sprint("Come on!\n", "default", "punctuation")
+            s(1)
             print("\n" * 2)
             break
         elif value == 4:
-            sprint("Yay! ", "default", "period")
-            sprint("Someone else who wants to come with us!\n", "default", "period")
-            sleep(1)
+            sprint("Yay! ", "default", "punctuation")
+            sprint("Someone else who wants to come with us!\n", "default", "punctuation")
+            s(1)
             print("\n" * 2)
             break
         elif value == 5:
-            sprint("We're going to have so much fun!\n", "default", "period")
+            sprint("We're going to have so much fun!\n", "default", "punctuation")
         else:
             sprint("Hm... ", "default", "period")
             sprint("Something is not right, ", "default", "comma")
@@ -90,50 +71,50 @@ while True:
         if value == 1:
             sprint("Aww... ", "slower", "period")
             sprint("I really wanted you to come...\n", "slower", "period")
-            sleep(1)
+            s(1)
             quit()
         elif value == 2:
             sprint("I thought you liked adventures... ", "slower", "period")
-            sprint("That's why you chose this game right?\n", "slower", "period")
-            sleep(1)
+            sprint("That's why you chose this game right?\n", "slower", "punctuation")
+            s(1)
             quit()
         elif value == 3:
-            sprint("Oh... ", "slower" , "period")
+            sprint("Oh... ", "slower", "period")
             sprint("Well, ", "slower", "comma")
-            sprint("you're always welcome to come back when you want to!\n", "slower", "period")
-            sleep(1)
+            sprint("you're always welcome to come back when you want to!\n", "slower", "punctuation")
+            s(1)
             quit()
         elif value == 4:
             sprint("I guess I never said you had to come with us... ", "slower", "period")
             sprint("Although we really hoped you did...\n", "slower", "period")
-            sleep(1)
+            s(1)
             quit()
         elif value == 5:
             sprint("But... ", "slower", "period")
-            sprint("What did I say for you to not come with us?\n", "slower", "period")
-            sleep(1)
+            sprint("What did I say for you to not come with us?\n", "slower", "punctuation")
+            s(1)
             quit()
     else:
         if value == 1:
             sprint("I thought I said there we're only two options, ", "default", "comma")
-            sprint("'begin' or 'quit'?\n", "default", "period")
+            sprint("'begin' or 'quit'?\n", "default", "input")
             program = input("> ")
         elif value == 2:
             sprint("I think you mistyped something... ", "default", "period")
-            sprint("You sure you typed either 'begin' or 'leave'?\n", "default", "period")
+            sprint("You sure you typed either 'begin' or 'leave'?\n", "default", "input")
             program = input("> ")
         elif value == 3:
             sprint("And here I thought Tailstar couldn't spell... ", "default", "period")
             sprint("Like I said, ", "default", "comma")
-            sprint("do you want to 'begin' or 'leave'?\n", "default", "period")
+            sprint("do you want to 'begin' or 'leave'?\n", "default", "input")
             program = input("> ")
         elif value == 4:
-            sprint("I don't think I said anything else other than 'begin' or 'quit'?\n", "default", "period")
+            sprint("I don't think I said anything else other than 'begin' or 'quit'?\n", "default", "input")
             program = input("> ")
         elif value == 5:
-            sprint("Come on! ", "default", "period")
-            sprint("Let's go already! ", "default", "period")
-            sprint("Do you want to 'begin' or 'quit'?\n", "default", "period")
+            sprint("Come on! ", "default", "punctuation")
+            sprint("Let's go already! ", "default", "punctuation")
+            sprint("Do you want to 'begin' or 'quit'?\n", "default", "input")
             program = input("> ")
 
 # Chapter Select
@@ -144,17 +125,46 @@ print("Chapter Select:\n",
 
 chapsel = input("> ")
 while True:
+    value = randint(1, 5)
     if chapsel in chapter:
         if islocked():
-            print(random.choice(locked1))
-            chapsel = input("> ")
+            if value == 1:
+                sprint("Hey don't go on ahead! ", "default", "punctuation")
+                sprint("See what happens before first!\n", "default", "input")
+                chapsel = input("> ")
+            if value == 2:
+                sprint("Don't you ever wonder why there is ", "default", "break")
+                sprint("'LOCKED' on the chapter?\n", "default", "input")
+                chapsel = input("> ")
+            if value == 3:
+                sprint("Ok, ", "default", "comma")
+                sprint("this time try choosing something that isn't locked.\n", "default", "input")
+                chapsel = input("> ")
+            if value == 4:
+                sprint("I can't start that chapter if it's locked!\n", "default", "input")
+                chapsel = input("> ")
+            if value == 5:
+                sprint("I'm pretty sure Tailstar locked these chapters for a reason...\n", "default", "input")
+                chapsel = input("> ")
+
         else:
-            print(random.choice(blu1))
-            sleep(2)
-            print("\n" * 10)
-            break
+            if value == 1:
+                sprint("The journey finally begins! ", "default", "punctuation")
+                sprint("Let's go!\n", "default", "punctuation")
+                s(2)
+                print("\n" * 10)
+                break
+            "You have no problems with starting do you? No? Ok, let's go!\n",
+            "Now with that all over, let's start!\n",
+            "I wonder how this story will go...\n",
+            "Hm... I've run out of things to say!"
+
     else:
-        print(random.choice(other2))
+        "There are only three chapters you know... '01', '02', and '03'.\n",
+        "I feel like I'm talking to myself here! Well, maybe I am, but there's only three chapters to choose from!\n",
+        "I think you just typed a non-existent chapter... There are only three chapters.\n",
+        "Are you purposely typing the wrong characters just to get me to talk? If you are it isn't working!\n",
+        "I have this odd feeling that you might secretly be Tailstar... Or is that just me?\n"
         chapsel = input("> ")
 
 print("Oh I completely forgot! Tailstar and I still don't know your name yet!\n"

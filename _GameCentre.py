@@ -3,7 +3,7 @@
 
 import random
 from time import sleep
-from games import arithmetic,numguess,bluadventure
+from games import arithmetic, numguess, bluadventure
 from definitions import sprint
 
 # Introduction - Variables
@@ -12,7 +12,7 @@ menutime = 0
 
 # Start - Game Choice input options
 game_arithmetic = ["1", "a", "arithmetic"]
-game_numguess = ["2", "n", "number guess",]
+game_numguess = ["2", "n", "number guess"]
 game_findaword = ["3", "f", "find-a-word", "find a word"]
 game_cyoa = ["4", "c", "cyoa", "choose your own adventure"]
 
@@ -37,8 +37,6 @@ other1 = ["Hey that not an option!",
           "Are you purposely typing something wrong to get me to talk? If you are it's not working!",
           "I don't think that option you typed is an option...",
           "Come let's go and play something already! There isn't that many games to choose from!"]
-
-
 
 # --------------- CODE BEGINS HERE ---------------
 
