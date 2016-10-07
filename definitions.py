@@ -58,7 +58,7 @@ def sprint(text, speed, delay):
     elif delay == "break":
         sleep(0.1)
     elif delay == "punctuation":
-        sleep(0.3)
+        sleep(0.5)
     elif delay == "input":
         sleep(0.05)
     else:
