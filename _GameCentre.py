@@ -24,7 +24,8 @@ arithmeticmsg = ["Let's test out your maths skills!",
                  "I, Blu, challenge you to a maths battle!"]
 
 # Start - Number Guess messages
-numguessmsg = ["lets go!"]
+numguessmsg = ["Like number guessing I see... Let's go!",
+               "Let's see if you can beat me, "]
 
 # Start - Blu Adventure's messages
 cyoamsg = ["test",
@@ -37,6 +38,8 @@ other1 = ["Hey that not an option!",
           "I don't think that option you typed is an option...",
           "Come let's go and play something already! There isn't that many games to choose from!"]
 
+
+
 # --------------- CODE BEGINS HERE ---------------
 
 sprint("Blu's Game Centre v1.0\n", 0.07, 0.7)
@@ -45,18 +48,18 @@ sprint("Aiyurn (C) 2016\n\n", 0.07, 1.5)
 while gamechoice == "":
     # Introduction text
     if menutime < 1:
-        sprint("Welcome to my Game Centre!\n", 0.045, 1)
-        sprint("I'm Blu, ", 0.045, 0.45)
-        sprint("and I'll be joining you in the games you play in this program!\n", 0.045, 1)
-        sprint("Here are the games you can choose from:\n", 0.045, 0.3)
+        sprint("Welcome to my Game Centre!\n", "default", "period")
+        sprint("I'm Blu, ", "default", "comma")
+        sprint("and I'll be joining you in the games you play in this program!\n", "default", "period")
+        sprint("Here are the games you can choose from:\n", "default", 0.3)
         sprint("1) Arithmetic (Multiplication)\n", 0.03, 0.25)
         sprint("2) Number Guess\n", 0.03, 0.25)
         sprint("3) Find-a-word [IN DEVELOPMENT]\n", 0.03, 0.25)
         sprint("4) Blu's Adventures [BETA]\n", 0.03, 0.25)
         sprint("5) Tactical World [IN DEVELOPMENT]\n", 0.03, 0.3)
         sprint("6) Word Jam [IN DEVELOPMENT]\n", 0.03, 0.3)
-        sprint("So, ", 0.045, 0.45)
-        sprint("what game do you want to play?\n", 0.045, 0.2)
+        sprint("So, ", "default", "comma")
+        sprint("what game do you want to play?\n", "default", 0.2)
     else:
         print("And we're back at the menu again! What game do you want to play now?")
         print("Here are the games:\n"

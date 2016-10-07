@@ -45,5 +45,57 @@ def sprint(text, speed, delay):
     for c in text:
         print(c, end=""),
         sys.stdout.flush()
-        sleep(speed)
-    sleep(delay)
+        if speed == "default":
+            sleep(0.042)
+        elif speed == "slower":
+            sleep(0.06)
+        else:
+            sleep(speed)
+    if delay == "comma":
+        sleep(0.45)
+    elif delay == "period":
+        sleep(1)
+    else:
+        sleep(delay)
+
+def progressBar (iteration, total, prefix = '', suffix = '', decimals = 1, barLength = 100):
+    """
+    Call in a loop to create terminal progress bar
+    @params:
+        iteration   - Required  : current iteration (Int)
+        total       - Required  : total iterations (Int)
+        prefix      - Optional  : prefix string (Str)
+        suffix      - Optional  : suffix string (Str)
+        decimals    - Optional  : positive number of decimals in percent complete (Int)
+        barLength   - Optional  : character length of bar (Int)
+    """
+    formatStr       = "{0:." + str(decimals) + "f}"
+    percents        = formatStr.format(100 * (iteration / float(total)))
+    filledLength    = int(round(barLength * iteration / float(total)))
+    bar             = '█' * filledLength + '-' * (barLength - filledLength)
+    sys.stdout.write('\r%s |%s| %s%s %s' % (prefix, bar, percents, '%', suffix)),
+    if iteration == total:
+        sys.stdout.write('\n')
+    sys.stdout.flush()
+
+'''
+#
+# Sample Usage
+#
+
+from time import sleep
+
+# make a list
+items = list(range(0, 100))
+i = 0
+l = len(items)
+
+# Initial call to print 0% progress
+progressBar(i, l, prefix = 'Progress:', suffix = 'Complete', barLength = 50)
+for item in items:
+    # Do stuff...
+    sleep(0.1)
+    # Update Progress Bar
+    i += 1
+    progressBar(i, l, prefix = 'Progress:', suffix = 'Complete', barLength = 50)
+'''

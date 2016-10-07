@@ -1,30 +1,10 @@
 import random
 from time import sleep
+from definitions import sprint
 
 # Start - program varible outputs
 start1 = ["begin", "b", "start", "s"]
 start2 = ["quit", "q", "leave", "l"]
-
-# Start - Begin messages
-begin1 = ["Let the journey begin!",
-          "You're coming? Well then what are you waiting for? Let's go!",
-          "You're joining us? That makes three! Come on!",
-          "Yay! Someone else who wants to come with us!",
-          "We're going to have so much fun!"]
-
-# Start - Leaving messages
-quit1 = ["Aww. Tailstar really wanted you to come...",
-         "I thought you'd be wanting to come...",
-         "Oh... Well, you're always welcome to join when you want to!",
-         "I guess I never said you had to come with us... Although I really hoped you did...",
-         "But... What did I say for you to not come with us?"]
-
-# Start - Other messages
-other1 = ["I thought I said there we're only two options, 'begin' or 'quit'?",
-          "I think you misspelled something...\nYou sure you typed either 'begin' or 'leave'?",
-          "And here I thought Tailstar couldn't spell...\nLike I said, do you want to 'begin' or 'leave'?",
-          "I don't think I said anything else other than 'begin' or 'quit'?",
-          "Come on! Let's go already! Do you want to 'begin' or 'quit'?"]
 
 # Chapter select - Blu's messages
 blu1 = ["The journey finally begins! Let's go!",
@@ -63,25 +43,98 @@ def islocked():
 
 
 # Introduction text
-print("Welcome to Blu's Adventure!\n"
-      "Come on Tailstar we have a person who wants to join us!\n"
-      "To join me in my adventure, type 'begin'! To leave, type 'quit'")
+sprint("Welcome to Blu's Adventure!\n", "default", 1.5)
+sprint("Come on Tailstar we have a person who wants to join us!\n", "default", "period")
+sprint("To join me in my adventure, ", "default", "comma")
+sprint("type 'begin'! ", "default", "period")
+sprint("To leave, ", "default", "comma")
+sprint("type 'quit'.\n", "default", "period")
 
 # Start
 program = input("> ")
 while True:
+    value = random.randint(1, 5)
     if program in start1:
-        print(random.choice(begin1))
-        sleep(2)
-        print("\n" * 2)
-        break
+        if value == 1:
+            sprint("Let the journey begin!\n", "default", "period")
+            sleep(1)
+            print("\n" * 2)
+            break
+        elif value == 2:
+            sprint("You're coming? ", "default", "period")
+            sprint("Well then what are you waiting for? ", "default", "period")
+            sprint("Let's go!\n", "default", "period")
+            sleep(1)
+            print("\n" * 2)
+            break
+        elif value == 3:
+            sprint("You're joining us? ", "default", "period")
+            sprint("That makes three! ", "default", "period")
+            sprint("Come on!\n", "default", "period")
+            sleep(1)
+            print("\n" * 2)
+            break
+        elif value == 4:
+            sprint("Yay! ", "default", "period")
+            sprint("Someone else who wants to come with us!\n", "default", "period")
+            sleep(1)
+            print("\n" * 2)
+            break
+        elif value == 5:
+            sprint("We're going to have so much fun!\n", "default", "period")
+        else:
+            sprint("Hm... ", "default", "period")
+            sprint("Something is not right, ", "default", "comma")
+            sprint("you're not supposed to get this message...", "default", "comma")
     elif program in start2:
-        print(random.choice(quit1))
-        sleep(2)
-        quit()
+        if value == 1:
+            sprint("Aww... ", "slower", "period")
+            sprint("I really wanted you to come...\n", "slower", "period")
+            sleep(1)
+            quit()
+        elif value == 2:
+            sprint("I thought you liked adventures... ", "slower", "period")
+            sprint("That's why you chose this game right?\n", "slower", "period")
+            sleep(1)
+            quit()
+        elif value == 3:
+            sprint("Oh... ", "slower" , "period")
+            sprint("Well, ", "slower", "comma")
+            sprint("you're always welcome to come back when you want to!\n", "slower", "period")
+            sleep(1)
+            quit()
+        elif value == 4:
+            sprint("I guess I never said you had to come with us... ", "slower", "period")
+            sprint("Although we really hoped you did...\n", "slower", "period")
+            sleep(1)
+            quit()
+        elif value == 5:
+            sprint("But... ", "slower", "period")
+            sprint("What did I say for you to not come with us?\n", "slower", "period")
+            sleep(1)
+            quit()
     else:
-        print(random.choice(other1))
-        program = input("> ")
+        if value == 1:
+            sprint("I thought I said there we're only two options, ", "default", "comma")
+            sprint("'begin' or 'quit'?\n", "default", "period")
+            program = input("> ")
+        elif value == 2:
+            sprint("I think you mistyped something... ", "default", "period")
+            sprint("You sure you typed either 'begin' or 'leave'?\n", "default", "period")
+            program = input("> ")
+        elif value == 3:
+            sprint("And here I thought Tailstar couldn't spell... ", "default", "period")
+            sprint("Like I said, ", "default", "comma")
+            sprint("do you want to 'begin' or 'leave'?\n", "default", "period")
+            program = input("> ")
+        elif value == 4:
+            sprint("I don't think I said anything else other than 'begin' or 'quit'?\n", "default", "period")
+            program = input("> ")
+        elif value == 5:
+            sprint("Come on! ", "default", "period")
+            sprint("Let's go already! ", "default", "period")
+            sprint("Do you want to 'begin' or 'quit'?\n", "default", "period")
+            program = input("> ")
 
 # Chapter Select
 print("Chapter Select:\n",
