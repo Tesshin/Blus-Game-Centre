@@ -41,25 +41,29 @@ print(color['black'] + 'string' + color['off'])
 '''
 
 
-def sprint(text, speed, delay):
+def sprint(text, speed, delay):  # Print out text with a custom speed
     for c in text:
         print(c, end=""),
         sys.stdout.flush()
-        if speed == "default":
+        if speed == "default":  # Default printing speed
             sleep(0.042)
-        elif speed == "slower":
+        elif speed == "slower":  # Slower printing speed
             sleep(0.06)
         else:
             sleep(speed)
-    if delay == "comma":
+    if delay == "comma":  # If the last punctuation is a comma (,)
         sleep(0.45)
-    elif delay == "period":
+    elif delay == "period":  # If the last punctuation is a period (.)
         sleep(1)
-    elif delay == "break":
+    elif delay == "quote":  # If the last punctuation is quotes ("")
         sleep(0.1)
-    elif delay == "punctuation":
+    elif delay == "colon":  # If the last punctuation is a colon (:)
+        sleep(0.3)
+    elif delay == "list":  # If the last punctuation is a list of something
+        sleep(0.05)
+    elif delay == "mark": # If the last punctuation is a punctuation mark (! ?)
         sleep(0.5)
-    elif delay == "input":
+    elif delay == "input": # If the next code asks for an input
         sleep(0.05)
     else:
         sleep(delay)

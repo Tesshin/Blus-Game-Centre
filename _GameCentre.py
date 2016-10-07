@@ -1,7 +1,7 @@
 # Blu's Game Centre v1.0
 # Aiyurn © 2016
 
-import random
+from random import randint
 from time import sleep
 from games import arithmetic, numguess, bluadventure
 from definitions import sprint
@@ -15,13 +15,6 @@ game_arithmetic = ["1", "a", "arithmetic"]
 game_numguess = ["2", "n", "number guess"]
 game_findaword = ["3", "f", "find-a-word", "find a word"]
 game_cyoa = ["4", "c", "cyoa", "choose your own adventure"]
-
-# Start - Arithmetic messages
-arithmeticmsg = ["Let's test out your maths skills!",
-                 "Time to put your maths to the test!",
-                 "Arithmetic? Sure let's go!",
-                 "So you like maths I see... Let's see how good you are!",
-                 "I, Blu, challenge you to a maths battle!"]
 
 # Start - Number Guess messages
 numguessmsg = ["Like number guessing I see... Let's go!",
@@ -49,15 +42,15 @@ while gamechoice == "":
         sprint("Welcome to my Game Centre!\n", "default", "period")
         sprint("I'm Blu, ", "default", "comma")
         sprint("and I'll be joining you in the games you play in this program!\n", "default", "period")
-        sprint("Here are the games you can choose from:\n", "default", 0.3)
-        sprint("1) Arithmetic (Multiplication)\n", 0.03, 0.25)
-        sprint("2) Number Guess\n", 0.03, 0.25)
-        sprint("3) Find-a-word [IN DEVELOPMENT]\n", 0.03, 0.25)
-        sprint("4) Blu's Adventures [BETA]\n", 0.03, 0.25)
-        sprint("5) Tactical World [IN DEVELOPMENT]\n", 0.03, 0.3)
-        sprint("6) Word Jam [IN DEVELOPMENT]\n", 0.03, 0.3)
+        sprint("Here are the games you can choose from:\n", "default", "colon")
+        sprint("1) Arithmetic (Multiplication)\n", "default", "list")
+        sprint("2) Number Guess\n", "default", "list")
+        sprint("3) Find-a-word [IN DEVELOPMENT]\n", "default", "list")
+        sprint("4) Blu's Adventures [BETA]\n", "default", "list")
+        sprint("5) Tactical World [IN DEVELOPMENT]\n", "default", "list")
+        sprint("6) Word Jam [IN DEVELOPMENT]\n", "default", "list")
         sprint("So, ", "default", "comma")
-        sprint("what game do you want to play?\n", "default", 0.2)
+        sprint("what game do you want to play?\n", "default", "input")
     else:
         print("And we're back at the menu again! What game do you want to play now?")
         print("Here are the games:\n"
@@ -71,14 +64,27 @@ while gamechoice == "":
     # Start
     gamechoice = input("> ")
     while True:
+        value = randint(1,5)
         if gamechoice in game_arithmetic:
-            print(random.choice(arithmeticmsg))
+            if value == 1:
+                sprint("Let's test out your maths skills!", "default", "mark")
+            elif value == 2:
+                sprint("Time to put your maths to the test!", "default", "mark")
+            elif value == 3:
+                sprint("Arithmetic? ", "default", "mark")
+                sprint("Sure let's go!", "default", "mark")
+            elif value == 4:
+                sprint("So you like maths I see... ", "default", "period")
+                sprint("Let's see how good you are!", "default", "mark")
+            elif value == 5:
+                sprint("I, ", "default", "comma")
+                sprint("Blu, ", "default", "comma")
+                sprint("challenge you to a maths battle!", "default", "mark")
             sleep(2)
-            print("\n"*2)
+            print("\n" * 2)
             arithmetic()
             gamechoice = ""
             break
-
         elif gamechoice in game_numguess:
             print(random.choice(numguessmsg))
             sleep(2)
