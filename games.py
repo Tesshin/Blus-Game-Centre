@@ -87,10 +87,10 @@ def arithmetic():
             if rounds.isalpha():  # Checks if the input is a number
                 print(random.choice(roundnotdigit))
                 rounds = input("> ")
-            elif int(rounds) < 0:
+            elif int(rounds) < 0:  # Checks if the amount of rounds is less than 0
                 print(random.choice(negativenum))
                 rounds = input("> ")
-            elif int(rounds) == 0:
+            elif int(rounds) == 0:  # Checks if the amount of rounds is 0
                 print(random.choice(norounds))
             else:
                 break

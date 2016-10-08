@@ -1,8 +1,8 @@
 from random import randint
-from time import sleep as s
+from time import sleep as s  # All sleep functions will now be called s
 from definitions import sprint
 
-# Start - program varible outputs
+# Start - program variable outputs
 start1 = ["begin", "b", "start", "s"]
 start2 = ["quit", "q", "leave", "l"]
 
@@ -14,7 +14,7 @@ chapter = ["01", "1", "02", "2", "03", "3"]
 locked = ["02", "2", "03", "3"]
 
 
-def islocked():
+def islocked():  # A function that checks whether the selected chapter is locked
     if chapsel in locked:
         return True
     else:
@@ -34,7 +34,7 @@ sprint("'quit'.\n", "default", "input")
 # Start
 program = input("> ")
 while True:
-    value = randint(1, 5)
+    value = randint(1, 5)  # Random number generator to select one of the messages
     if program in start1:
         if value == 1:
             sprint("Let the journey begin!\n", "default", "mark")
@@ -160,10 +160,5 @@ while True:
             sprint("I have this odd feeling that you might secretly be Tailstar... ", "default", "period")
             sprint("Or is that just me?\n", "default", "input")
         chapsel = input("> ")
-
-print("Oh I completely forgot! Tailstar and I still don't know your name yet!\n"
-      "Do you want to tell us your name? You don't have to, but if you don't\n"
-      "give us your name we'll just use Tailstar as your name! Who knows,\n"
-      "maybe you like Tailstar? ")
 
 # Chapter 01 - The Tale of Blu

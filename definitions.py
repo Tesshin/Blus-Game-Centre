@@ -45,12 +45,14 @@ def sprint(text, speed, delay):  # Print out text with a custom speed
     for c in text:
         print(c, end=""),
         sys.stdout.flush()
-        if speed == "default":  # Default printing speed
+        if speed == "normal":  # Default printing speed
             sleep(0.042)
-        elif speed == "slower":  # Slower printing speed
+        if speed == "slack":  # Slow printing speed
+            sleep(0.05)
+        if speed == "slower":  # Slower printing speed
             sleep(0.06)
-        else:
-            sleep(speed)
+        if speed == "faster":  # Faster printing speed
+            sleep(0.03)
     if delay == "comma":  # If the last punctuation is a comma (,)
         sleep(0.45)
     elif delay == "period":  # If the last punctuation is a period (.)
@@ -61,12 +63,10 @@ def sprint(text, speed, delay):  # Print out text with a custom speed
         sleep(0.3)
     elif delay == "list":  # If the last punctuation is a list of something
         sleep(0.05)
-    elif delay == "mark": # If the last punctuation is a punctuation mark (! ?)
+    elif delay == "mark":  # If the last punctuation is a punctuation mark (! ?)
         sleep(0.5)
-    elif delay == "input": # If the next code asks for an input
+    elif delay == "input":  # If the next code asks for an input
         sleep(0.05)
-    else:
-        sleep(delay)
 
 
 def progressbar(iteration, total, prefix='', suffix='', decimals=1, barlength=100):
