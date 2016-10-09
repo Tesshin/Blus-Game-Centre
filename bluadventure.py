@@ -27,7 +27,7 @@ sprint("Come on Tailstar we have a person who wants to join us!\n", "default", "
 sprint("To join me in my adventure, ", "default", "comma")
 sprint("type ", "default", "quote")
 sprint("'begin'! ", "default", "mark")
-sprint("To leave, ", "default", "comma")
+sprint("To go back to the menu, ", "default", "comma")
 sprint("type ", "default", "quote")
 sprint("'quit'.\n", "default", "input")
 
@@ -37,59 +37,83 @@ while True:
     value = randint(1, 5)  # Random number generator to select one of the messages
     if program in start1:
         if value == 1:
+            # Let the journey begin!
             sprint("Let the journey begin!\n", "default", "mark")
         elif value == 2:
+            # You're coming? Well then what are you waiting for? Let's go!
             sprint("You're coming? ", "default", "mark")
             sprint("Well then what are you waiting for? ", "default", "puncutation")
             sprint("Let's go!\n", "default", "mark")
         elif value == 3:
-            sprint("You're joining us? ", "default", "mark")
+            # So you're joining me and Tailstar? That makes three! Come on let's go!
+            sprint("So you're joining me and Tailstar? ", "default", "mark")
             sprint("That makes three! ", "default", "mark")
-            sprint("Come on!\n", "default", "mark")
+            sprint("Come on let's go!\n", "default", "mark")
         elif value == 4:
+            # Yay! Someone else who wants to come with me!
             sprint("Yay! ", "default", "mark")
-            sprint("Someone else who wants to come with us!\n", "default", "mark")
+            sprint("Someone else who wants to come with me!\n", "default", "mark")
         elif value == 5:
-            sprint("We're going to have so much fun!\n", "default", "mark")
+            # We're going to have so much fun in this adventure!
+            sprint("We're going to have so much fun in this adventure!\n", "default", "mark")
         s(1)
         print("\n" * 2)
         break
     elif program in start2:
         if value == 1:
+            # Aww... I really wanted you to come...
             sprint("Aww... ", "slower", "period")
             sprint("I really wanted you to come...\n", "slower", "period")
         elif value == 2:
+            # I thought you liked adventures... That's why you chose this game right?
             sprint("I thought you liked adventures... ", "slower", "period")
             sprint("That's why you chose this game right?\n", "slower", "mark")
         elif value == 3:
+            # Oh... Well, you're always welcome to come back when you want to!
             sprint("Oh... ", "slower", "period")
             sprint("Well, ", "slower", "comma")
             sprint("you're always welcome to come back when you want to!\n", "slower", "mark")
         elif value == 4:
+            # I guess I never said you had to come with us... Although I really hoped you did...
             sprint("I guess I never said you had to come with us... ", "slower", "period")
-            sprint("Although we really hoped you did...\n", "slower", "period")
+            sprint("Although I really hoped you did...\n", "slower", "period")
         elif value == 5:
+            # But... What did I say for you to come with me?
             sprint("But... ", "slower", "period")
-            sprint("What did I say for you to not come with us?\n", "slower", "mark")
+            sprint("What did I say for you to not come with me?\n", "slower", "mark")
         s(1)
         quit()
     else:
         if value == 1:
+            # I thought I said there we're only two options, 'begin' or 'quit'?
             sprint("I thought I said there we're only two options, ", "default", "comma")
-            sprint("'begin' or 'quit'?\n", "default", "input")
+            sprint("'begin' or ", "default", "quote")
+            sprint("'quit'?\n", "default", "input")
         elif value == 2:
+            # I think you mistyped something... You sure you typed either 'begin' or 'leave'?
             sprint("I think you mistyped something... ", "default", "period")
-            sprint("You sure you typed either 'begin' or 'leave'?\n", "default", "input")
+            sprint("You sure you typed either ", "default", "quote")
+            sprint("'begin' or ", "default", "quote")
+            sprint("'leave'?\n", "default", "input")
         elif value == 3:
+            # And here I thought Tailstar couldn't spell... Like I said, do you want to 'begin' or 'leave'?
             sprint("And here I thought Tailstar couldn't spell... ", "default", "period")
             sprint("Like I said, ", "default", "comma")
-            sprint("do you want to 'begin' or 'leave'?\n", "default", "input")
+            sprint("do you want to ", "default", "quote")
+            sprint("'begin' or ", "default", "quote")
+            sprint("'leave'?\n", "default", "input")
         elif value == 4:
-            sprint("I don't think I said anything else other than 'begin' or 'quit'?\n", "default", "input")
+            # I don't think I said anything else other than 'begin' or 'quit'?
+            sprint("I don't think I said anything else other than ", "default", "quote")
+            sprint("'begin' or ", "default", "quote")
+            sprint("'quit'?\n", "default", "input")
         elif value == 5:
-            sprint("Come on! ", "default", "mark")
-            sprint("Let's go already! ", "default", "mark")
-            sprint("Do you want to 'begin' or 'quit'?\n", "default", "input")
+            # Come on! Let's go already! Do you want to 'begin' or 'quit'?
+            sprint("Come on! ", "faster", "mark")
+            sprint("Let's go already! ", "faster", "mark")
+            sprint("Do you want to ", "default", "quote")
+            sprint("'begin' or ", "default", "quote")
+            sprint("'quit'?\n", "default", "input")
         program = input("> ")
 
 # Chapter Select
@@ -104,15 +128,19 @@ while True:
     if chapsel in chapter:
         if islocked():
             if value == 1:
+                # Hey don't go on ahead! See what happens before first!
                 sprint("Hey don't go on ahead! ", "default", "mark")
                 sprint("See what happens before first!\n", "default", "input")
             elif value == 2:
+                # Don't you ever wonder why there is 'LOCKED' on the chapter?
                 sprint("Don't you ever wonder why there is ", "default", "quote")
                 sprint("'LOCKED' on the chapter?\n", "default", "input")
             elif value == 3:
+                # Ok, this time try choosing something that isn't locked.
                 sprint("Ok, ", "default", "comma")
                 sprint("this time try choosing something that isn't locked.\n", "default", "input")
             elif value == 4:
+                # I can't start that chapter if it's locked!
                 sprint("I can't start that chapter if it's locked!\n", "default", "input")
             elif value == 5:
                 sprint("I'm pretty sure Tailstar locked these chapters for a reason...\n", "default", "input")

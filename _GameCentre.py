@@ -66,6 +66,26 @@ while game_choice == "":
     while True:
         value = randint(1, 5)
         if give_name == "yes":
+            if value == 1:
+                sprint("Yay! ", "default", "mark")
+                sprint("So what is your name?\n", "default", "mark")
+            elif value == 2:
+                sprint("You're name doesn't happen to be Tailstar, ", "default", "comma")
+                sprint("right? ", "default", "mark")
+                sprint("If it is ", "default", 0)
+                sprint("then I already know you!\n", "faster", "mark")
+            elif value == 3:
+                sprint("Let's see what cool name you have!\n", "default", "mark")
+            elif value == 4:
+                sprint("Tailstar told me to look out for people with names ", "default", "quote")
+                sprint("'Riley' or ", "default", "quote")
+                sprint("'Michael'. ", "default", "period")
+                sprint("That doesn't happen to be you is it?\n", "default", "mark")
+            elif value == 5:
+                sprint("I was going to guess your name, ", "default", "comma")
+                sprint("but that would be too hard wouldn't it?\n", "default", "mark")
+            value = randint(1, 5)
+            name = input("> ")
             print()
             break
         elif give_name == "no":
@@ -92,7 +112,10 @@ while game_choice == "":
             s(1.5)
             break
         else:
-            print()
+            "Wait... So are you giving me your name?" \
+            "I don't know what you just typed but for all I know it's not one of the options" \
+            "A simple question and simple answer... Well, maybe not the answer, but still, typing the answer is simple!" \
+            ""
             give_name = input("> ")
     while True:
         value = randint(1, 5)  # Random number to determine which message to be displayed
