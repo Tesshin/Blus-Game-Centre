@@ -8,6 +8,3 @@ Blu's Game Centre is licensed under the MIT License. Refer to the LICENSE file i
 Check out my other projects on GitHub!
 
 If you have any issues, feel free to email me at jumpy12359@icloud.com
-
-### Support
-If you like, you can support me by [donating by PayPal](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=K899FANUJ2ZXW).
