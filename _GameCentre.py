@@ -4,12 +4,13 @@
 from random import randint
 from time import sleep as s
 from games import arithmetic, numguess, bluadventure
-from definitions import sprint, progressbar
+from definitions import sprint, progressbar, ask_name
 
 # Introduction - Variables
 game_choice = ""
 menu_time = 0
 give_name = ""
+asked_name = 0
 
 # Start - Game Choice input options
 game_arithmetic = ["1", "a", "arithmetic"]
@@ -71,93 +72,14 @@ while game_choice == "":
               "4) Blu's Adventures [BETA]\n"
               "5) Guess the country [IN DEVELOPMENT\n"
               "6) Letter Scramble [IN DEVELOPMENT")
-
     game_choice = input("> ")
-    s(0.5)
-    # Oh that reminds me! I still don't know your name yet!
-    # Do you want to tell me your name? You don't have to, but it would be nice if you did!
-    sprint("Oh that reminds me! ", "faster", "mark")
-    sprint("I still don't know your name yet! ", "normal", "mark")
-    sprint("Do you want to tell me your name? ", "normal", "mark")
-    sprint("You don't have to, ", "slack", "comma")
-    sprint("but it would be nice if you did!\n", "faster", "period")
-    print("Do you want to give your name? (Yes / No)")
-    s(0.7)
-    give_name = input("> ")
-    give_name = give_name.lower()
-    while True:
-        value = randint(1, 5)
-        if give_name == "yes":
-            if value == 1:
-                # Yay! So what is your name?
-                sprint("Yay! ", "default", "mark")
-                sprint("So what is your name?\n", "default", "mark")
-            elif value == 2:
-                # You're name doesn't happen to be Tailstar, is it? If it is, then I already know you!
-                sprint("You're name doesn't happen to be Tailstar, ", "default", "comma")
-                sprint("is it? ", "default", "mark")
-                sprint("If it is ", "default", 0)
-                sprint("then I already know you!\n", "faster", "mark")
-            elif value == 3:
-                # Let's see what cool name you have!
-                sprint("Let's see what cool name you have!\n", "default", "mark")
-            elif value == 4:
-                # Tailstar told me to look out for people with names 'Riley' or 'Michael'.
-                # That doesn't happen to be you is it?
-                sprint("Tailstar told me to look out for people with names ", "default", "quote")
-                sprint("'Riley' or ", "default", "quote")
-                sprint("'Michael'. ", "default", "period")
-                sprint("That doesn't happen to be you is it?\n", "default", "mark")
-            elif value == 5:
-                # I was going to guess your name, but that would be too hard wouldn't it?
-                sprint("I was about to guess your name, ", "default", "comma")
-                sprint("but that would be too hard wouldn't it?\n", "default", "mark")
-            value = randint(1, 5)
-            name = input("> ")
-            print()
-            break
-        elif give_name == "no":
-            if value == 1:
-                # Oh... That's fine, let's continue to the game then...
-                sprint("Oh... ", "slack", "period")
-                sprint("That's fine, ", "slack", "comma")
-                sprint("let's continue to the game then...\n", "slack", "period")
-            elif value == 2:
-                # I see... I did say you don't have to give it, let's go on to your game.
-                sprint("I see... ", "slack", "period")
-                sprint("I did say you don't have to give it, ", "slack", "comma")
-                sprint("let's go on to your game.\n", "slack", "period")
-            elif value == 3:
-                # It would've been nice to call you by a name...
-                sprint("It would've been nice to call you by a name...\n", "slack", "period")
-            elif value == 4:
-                # I guess I'm going to be still referencing you as... Well, you...
-                sprint("I guess I'm going to be still referencing you as... ", "slack", "period")
-                sprint("Well, ", "slack", "comma")
-                sprint("you...\n", "slack", "period")
-            elif value == 5:
-                # So, no name? Ok then, off to the game we go...
-                sprint("So, ", "slack", "comma")
-                sprint("no name? ", "slack", "mark")
-                sprint("Ok then, ", "slack", "comma")
-                sprint("off to the game we go...\n", "slack", "period")
-            s(1.5)
-            break
-        else:
-            if value == 1:
-                sprint("Wait... ", "defualt", "period")
-                sprint("So are you giving me your name?", "default", "mark")
-            elif value == 2:
-                sprint("I don't know what you just typed, ", "default", "comma")
-                sprint("but for all I know it isn't one of the options.", "default", "period")
-            elif value == 3:
-                sprint("A simple question and simple answer... ", "default", "period")
-                sprint("Well, ", "default", "comma")
-                sprint("maybe not the answer, ", "default", "comma")
-                sprint("but typing the answer is simple!", "default", "mark")
-            "Names... Such a strange thing... But back to the point, you didn't type one of the options!" \
-            "I thought I asked a yes or no question... I guess it wasn't so simple?"
-            give_name = input("> ")
+
+    if asked_name == 0:  # A check to see whether the user has given his/her name.
+        name = ask_name()
+        asked_name = 1
+    else:
+        continue
+
     while True:
         value = randint(1, 5)  # Random number to determine which message to be displayed
         if game_choice in game_arithmetic:  # If the user selects the game Arithmetic
