@@ -144,45 +144,52 @@ while True:
 
         else:
             if value == 1:
+                # The journey finally begins! Let's go!
                 sprint("The journey finally begins! ", "normal", "mark")
                 sprint("Let's go!\n", "normal", "mark")
             elif value == 2:
+                # You have no problems with starting do you? No? Ok, let's go!
                 sprint("You have no problems with starting do you? ", "normal", "mark")
                 sprint("No? ", "normal", "mark")
                 sprint("Ok, ", "normal", "comma")
                 sprint("let's go!\n", "normal", "mark")
             elif value == 3:
+                # Now with that all over, let's start!
                 sprint("Now with that all over, ", "normal", "comma")
                 sprint("let's start!\n", "normal", "mark")
             elif value == 4:
-                sprint("I wonder how this story will go...\n", "normal", "period")
+                # I wonder how this story will turn out...
+                sprint("I wonder how this story will turn out...\n", "normal", "period")
             elif value == 5:
+                # Hm... I've run out of things to say!
                 sprint("Hm... ", "normal", "period")
-                sprint("I've run out of things to say!", "normal", "mark")
+                sprint("I've run out of things to say!\n", "normal", "mark")
             s(2)
             print("\n" * 10)
             break
 
     else:
         if value == 1:
-            sprint("There are only three chapters you know... ", "normal", "period")
-            sprint("'01', ", "normal", "comma")
-            sprint("'02', ", "normal", "comma")
-            sprint("and '03'.\n", "normal", "input")
+            # There aren't that many chapters to choose from you know...
+            sprint("There aren't that many chapters to choose from you know...\n", "default", "input")
         elif value == 2:
-            sprint("I feel like I'm talking to myself here! ", "normal", "mark")
-            sprint("Well, ", "normal", "comma")
+            # I feel like I'm talking to myself here! Well, maybe I am, but there's only so many chapters to select!
+            sprint("I feel like I'm talking to myself here! ", "faster", "mark")
+            sprint("Well, ", "slack", "comma")
             sprint("maybe I am, ", "normal", "comma")
-            sprint("but there's only three chapters to choose from!\n", "normal", "input")
+            sprint("but there's only so many chapters to select!\n", "normal", "input")
         elif value == 3:
-            sprint("I think you just typed a non-existent chapter... ", "normal", "period")
-            sprint("There are only three chapters.\n", "normal", "input")
+            # I think you just typed a chapter that doesn't exist... Try typing one that exists this time.
+            sprint("I think you just typed a chapter that doesn't exist... ", "normal", "period")
+            sprint("Try typing one that exists this time.\n", "normal", "input")
         elif value == 4:
-            sprint("Are you purposely typing the wrong characters just to get me to talk? ", "normal", "mark")
-            sprint("If you are it isn't working!\n", "normal", "input")
+            # Are you purposely typing the wrong chapters just to get me to talk? If you are it isn't working!
+            sprint("Are you purposely typing the wrong chapters just to get me to talk? ", "normal", "mark")
+            sprint("If you are it isn't working!\n", "faster", "input")
         elif value == 5:
-            sprint("I have this odd feeling that you might secretly be Tailstar... ", "normal", "period")
-            sprint("Or is that just me?\n", "normal", "input")
+            # Are you by any chance secretly Tailstar... Or am I just imagining things?
+            sprint("Are you by any chance secretly Tailstar... ", "normal", "period")
+            sprint("Or am I just imagining things?\n", "normal", "input")
         chapsel = input("> ")
 
 # Chapter 01 - The Tale of Blu

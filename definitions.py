@@ -3,6 +3,9 @@ from time import sleep
 from random import randint
 
 # http://stackoverflow.com/questions/22886353/printing-colors-in-python-terminal
+# http://stackoverflow.com/questions/4099422/printing-slowly-simulate-typing
+# http://stackoverflow.com/questions/3173320/text-progress-bar-in-the-console
+
 color = {
     'bold_white':      "\033[1;37m",
     'bold_yellow':     "\033[1;33m",
@@ -41,7 +44,6 @@ print(color['magenta'] + 'string' + color['off'])
 print(color['black'] + 'string' + color['off'])
 '''
 
-# http://stackoverflow.com/questions/4099422/printing-slowly-simulate-typing
 def sprint(text, speed, delay):  # Print out text with a custom speed
     for c in text:
         print(c, end=""),
@@ -71,7 +73,6 @@ def sprint(text, speed, delay):  # Print out text with a custom speed
     elif delay == "input":  # If the next code asks for an input
         sleep(0.05)
 
-# http://stackoverflow.com/questions/3173320/text-progress-bar-in-the-console
 def progressbar(iteration, total, prefix='', suffix='', decimals=1, barlength=100):
     """
     Call in a loop to create terminal progress bar
