@@ -51,11 +51,11 @@ def sprint(text, speed, delay):  # Print out text with a custom speed
         sys.stdout.flush()
         if speed == "default":  # Normal printing speed
             sleep(0.035)
-        if speed == "slack":  # Slow printing speed
+        if speed == "slow":  # Slow printing speed
             sleep(0.05)
         if speed == "slower":  # Slower printing speed
             sleep(0.06)
-        if speed == "super":  # Fastest printing speed
+        if speed == "fastest":  # Fastest printing speed
             sleep(0.02)
         if speed == "faster":  # Faster printing speed
             sleep(0.03)
@@ -73,6 +73,7 @@ def sprint(text, speed, delay):  # Print out text with a custom speed
         sleep(0.5)
     elif delay == "input":  # If the next code asks for an input
         sleep(0.05)
+
 
 def progressbar(iteration, total, prefix='', suffix='', decimals=1, barlength=100):
     """
@@ -123,7 +124,7 @@ def ask_name():
     sprint("Oh that reminds me! ", "faster", "mark")
     sprint("I still don't know your name yet! ", "default", "mark")
     sprint("Do you want to tell me your name? ", "default", "mark")
-    sprint("You don't have to, ", "slack", "comma")
+    sprint("You don't have to, ", "slow", "comma")
     sprint("but it would be nice if you did!\n", "faster", "period")
     print("Do you want to give your name? (Yes / No)")
     sleep(0.7)
@@ -185,8 +186,8 @@ def ask_name():
                         # AHHH IT'S RILEY!!! Sorry, Tailstar told me to do that if you played my game, but let's
                         # put that aside and let's go play!
                         sprint("AHHH IT'S RILEY!!! ", "default", "comma")
-                        sprint("Sorry, ", "slack", "comma")
-                        sprint("Tailstar told me to do that if you played my game, ", "slack", "comma")
+                        sprint("Sorry, ", "slow", "comma")
+                        sprint("Tailstar told me to do that if you played my game, ", "slow", "comma")
                         sprint("but let's put that aside and let's go play!", "default", "mark")
                     elif value == 3:
                         # Aren't you the one that created that country guessing game that Tailstar is
@@ -201,28 +202,28 @@ def ask_name():
         elif give_name == "no":
             if value == 1:
                 # Oh... That's fine, let's continue to the game then...
-                sprint("Oh... ", "slack", "period")
-                sprint("That's fine, ", "slack", "comma")
-                sprint("let's continue to the game then...\n", "slack", "period")
+                sprint("Oh... ", "slow", "period")
+                sprint("That's fine, ", "slow", "comma")
+                sprint("let's continue to the game then...\n", "slow", "period")
             elif value == 2:
                 # I see... I did say you don't have to give it, let's go on to your game.
-                sprint("I see... ", "slack", "period")
-                sprint("I did say you don't have to give it, ", "slack", "comma")
-                sprint("let's go on to your game.\n", "slack", "period")
+                sprint("I see... ", "slow", "period")
+                sprint("I did say you don't have to give it, ", "slow", "comma")
+                sprint("let's go on to your game.\n", "slow", "period")
             elif value == 3:
                 # It would've been nice to call you by a name...
-                sprint("It would've been nice to call you by a name...\n", "slack", "period")
+                sprint("It would've been nice to call you by a name...\n", "slow", "period")
             elif value == 4:
                 # I guess I'm going to be still referencing you as... Well, you...
-                sprint("I guess I'm going to be still referencing you as... ", "slack", "period")
-                sprint("Well, ", "slack", "comma")
-                sprint("you...\n", "slack", "period")
+                sprint("I guess I'm going to be still referencing you as... ", "slow", "period")
+                sprint("Well, ", "slow", "comma")
+                sprint("you...\n", "slow", "period")
             elif value == 5:
                 # So, no name? Ok then, off to the game we go...
-                sprint("So, ", "slack", "comma")
-                sprint("no name? ", "slack", "mark")
-                sprint("Ok then, ", "slack", "comma")
-                sprint("off to the game we go...\n", "slack", "period")
+                sprint("So, ", "slow", "comma")
+                sprint("no name? ", "slow", "mark")
+                sprint("Ok then, ", "slow", "comma")
+                sprint("off to the game we go...\n", "slow", "period")
             sleep(1.5)
             break
         else:
@@ -242,8 +243,8 @@ def ask_name():
                 sprint("but typing the answer is simple!\n", "default", "mark")
             elif value == 4:
                 # Names... Such a strange thing... But back to the point, you didn't type one of the options!
-                sprint("Names... ", "slack", "period")
-                sprint("Such a strange thing... ", "slack", "period")
+                sprint("Names... ", "slow", "period")
+                sprint("Such a strange thing... ", "slow", "period")
                 sprint("But back to the point, ", "default", "comma")
                 sprint("you didn't type one of the options!\n", "default", "mark")
             elif value == 5:
