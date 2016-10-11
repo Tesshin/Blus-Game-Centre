@@ -57,10 +57,9 @@ while game_choice == "":
         sprint("Here are the games you can choose from:\n", "default", "colon")
         sprint("1) Arithmetic (Multiplication)\n", "fastest", "list")
         sprint("2) Number Guess\n", "fastest", "list")
-        sprint("3) Find-a-word [IN DEVELOPMENT]\n", "fastest", "list")
-        sprint("4) Blu's Adventures [BETA]\n", "fastest", "list")
-        sprint("5) Tactical World [IN DEVELOPMENT]\n", "fastest", "list")
-        sprint("6) Word Jam [IN DEVELOPMENT]\n", "fastest", "period")
+        sprint("3) Blu's Adventures [BETA]\n", "fastest", "list")
+        sprint("4) Tactical World [IN DEVELOPMENT]\n", "fastest", "list")
+        sprint("5) Word Jam [IN DEVELOPMENT]\n", "fastest", "period")
         sprint("So, ", "default", "comma")
         sprint("what game do you want to play?\n", "default", "input")
     else:  # If the user has already accessed this menu i.e. coming back from a game
@@ -108,6 +107,7 @@ while game_choice == "":
             print("\n" * 2)
             arithmetic()
             game_choice = ""  # Reset gamechoice to enter back into the while loop
+            menu_time = 1
             break
         elif game_choice in game_numguess:  # If the user selects the game Number Guess
             if value == 1:
@@ -135,13 +135,8 @@ while game_choice == "":
             print("\n"*2)
             numguess()
             game_choice = ""  # Reset gamechoice to enter back into the while loop
+            menu_time = 1
             break
-
-#       elif gamechoice in game_wordfind:  TODO Remove wordfind
-#       print(random.choice(wordfind))
-#       time.sleep(2)
-#       print("\n"*2)
-#           break
 
         elif game_choice in game_cyoa:  # If the user selects the game Blu's Adventure
             if value == 1:
@@ -171,6 +166,7 @@ while game_choice == "":
             print("\n"*2)
             bluadventure()
             game_choice = ""
+            menu_time = 1
             break
 
         elif game_choice == 'quit':  # If the user wants to quit
