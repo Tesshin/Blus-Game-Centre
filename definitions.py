@@ -125,8 +125,7 @@ def ask_name():
     # Do you want to tell me your name? You don't have to, but it would be nice if you did!
     sprint("Oh that reminds me! ", "faster", "mark")
     sprint("I still don't know your name yet! ", "default", "mark")
-    sprint("Do you want to tell me your name? ", "default", "mark")
-    sprint("You don't have to, ", "slow", "comma")
+    sprint("You don't have to tell me your name, ", "slow", "comma")
     sprint("but it would be nice if you did!\n", "faster", "period")
     print("Do you want to give your name? (Yes / No)")
     sleep(0.7)
@@ -155,16 +154,16 @@ def ask_name():
                 sprint("'Riley' or ", "default", "quote")
                 sprint("'Michael'. ", "default", "period")
                 sprint("That doesn't happen to be you is it?\n", "default", "mark")
-                print("dasdas", "asdasdas", )
             elif value == 5:
                 # I was going to guess your name, but that would be too hard wouldn't it?
                 sprint("I was about to guess your name, ", "default", "comma")
                 sprint("but that would be too hard wouldn't it?\n", "default", "mark")
             print("Please enter your name.")
             name = input("> ")
+            name = name.lower()
             while True:
                 value = randint(1, 3)
-                if name == "Michael":
+                if name == "michael":  # If the name entered is Michael
                     if value == 1:
                         # Michael! You're Tailstar's friend right? Nice to meet you!
                         sprint("Michael! ", "default", "mark")
@@ -175,11 +174,11 @@ def ask_name():
                         sprint("Your that guy who created that RPG adventure game thing right? ", "default", "mark")
                         sprint("Nice to meet you!", "default", "mark")
                     elif value == 3:
-                        # Well if it isn't Tailstar's friend Michael! Let's go play!
-                        sprint("Well if it isn't Tailstar's friend Michael!", "default", "mark")
-                        sprint("Let's go play!", "default", "mark")
+                        # Are you that person who plays that League of Legends game? Nice to meet you!
+                        sprint("Are yuo that person who plays that League of Legends game?", "default", "mark")
+                        sprint("Nice to meet you!", "default", "mark")
                     return "Michael"
-                elif name == "Riley":
+                elif name == "riley":  # If the name entered is Riley
                     if value == 1:
                         # So you're Riley, the guy who plays that game called Warlight right? Nice to meet you!
                         sprint("So you're Riley, ", "default", "comma")
@@ -199,7 +198,7 @@ def ask_name():
                         sprint("If so, ", "default", "comma")
                         sprint("nice to meet you and I hope we can be friends!", "default", "mark")
                     return "Riley"
-                elif name == "Tailstar":
+                elif name == "tailstar":  # If the name entered is Tailstar
                     if value == 1:
                         # Are you actually Tailstar? Wait, I shouldn't be talking like that to you! Sorry!
                         sprint("Are you actually Tailstar? ", "default", "mark")
@@ -219,19 +218,19 @@ def ask_name():
                     if value == 1:
                         # Nice to meet you NAME! I hope we can be friends!
                         sprint("Nice to meet you " + name + "! ", "default", "mark")
-                        sprint("I hope we can be friends!", "default", "mark")
+                        sprint("I hope we can be friends!\n", "default", "mark")
                     elif value == 2:
                         # So your name is NAME... Sounds catchy to me, I like it!
                         sprint("So your name is " + name + "...", "default", "mark")
                         sprint("Sounds catchy to me, ", "default", "comma")
-                        sprint("I like it!", "default", "mark")
+                        sprint("I like it!\n", "default", "mark")
                     elif value == 3:
                         # NAME... NAME... I'll make sure to remember that... Um... NAME!
                         sprint(name + "... ", "slow", "period")
                         sprint(name + "... ", "slow", "period")
                         sprint("I'll make sure to remember that... ", "default", "period")
                         sprint("Um... ", "slow", "period")
-                        sprint(name + "!", "default", "mark")
+                        sprint(name + "!\n", "default", "mark")
                     return name
             break
         elif give_name == "no":
