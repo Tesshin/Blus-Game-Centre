@@ -5,6 +5,7 @@ from definitions import sprint
 # Start - program variable outputs
 start1 = ["begin", "b", "start", "s"]
 start2 = ["quit", "q", "leave", "l"]
+current_chapter = ""
 
 # Chapter select - Total chapters
 chapter = ["01", "1", "02", "2", "03", "3"]
@@ -18,7 +19,7 @@ def islocked():  # A function that checks whether the selected chapter is locked
         return False
 
 # Introduction text
-sprint("Welcome to Blu's Adventure!\n", "normal", 1.2)
+sprint("Welcome to Blu's Adventure!\n", "normal", "mark")
 sprint("Come on Tailstar we have a person who wants to join us!\n", "normal", "mark")
 sprint("To join me in my adventure, ", "normal", "comma")
 sprint("type ", "normal", "quote")
@@ -116,7 +117,7 @@ while True:
 print("Chapter Select:\n",
       "'01' - The Tale of Blu\n",
       "'02' - The Adventure Begins! [LOCKED]\n",
-      "'03' - Finding your first Pokémon [LOCKED]")
+      "'03' - Your First Pokémon [LOCKED]")
 
 chapsel = input("> ")
 while True:
@@ -193,3 +194,19 @@ while True:
         chapsel = input("> ")
 
 # Chapter 01 - The Tale of Blu
+while chapsel == "01" or chapsel == "1":
+    print("Chapter 01 - The Tale of Blu\n\n")
+    s(4)
+    print("Now, you may be wondering...\n")
+    s(2)
+    print("Who is Blu and Tailstar? Why are they inviting you on a journey?\n")
+    s(3)
+    print("To figure out why... We need to go back a few months...")
+
+# Chapter 02 - The Adventure Begins!
+while chapsel == "02" or chapsel == "2":
+    print("Chapter 02 - The Adventure Begins!")
+
+# Chapter 03 - Your First Pokémon
+while chapsel == "03" or chapsel == "3":
+    print("Chapter 03 - Your First Pokémon")
