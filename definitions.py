@@ -6,43 +6,43 @@ from random import randint
 # http://stackoverflow.com/questions/4099422/printing-slowly-simulate-typing
 # http://stackoverflow.com/questions/3173320/text-progress-bar-in-the-console
 
-color = {
-    'bold_white':      "\033[1;37m",
-    'bold_yellow':     "\033[1;33m",
-    'bold_green':      "\033[1;32m",
-    'bold_blue':       "\033[1;34m",
-    'bold_cyan':       "\033[1;36m",
-    'bold_red':        "\033[1;31m",
-    'bold_magenta':    "\033[1;35m",
-    'bold_black':      "\033[1;30m",
-    'white':           "\033[0;37m",
-    'yellow':          "\033[0;33m",
-    'green':           "\033[0;32m",
-    'blue':            "\033[0;34m",
-    'cyan':            "\033[0;36m",
-    'red':             "\033[0;31m",
-    'magenta':         "\033[0;35m",
-    'black':           "\033[0;30m",
-    'off':             "\033[0;0m",
-}
-'''
-print(color['bold_white'] + 'string' + color['off'])
-print(color['bold_yellow'] + 'string' + color['off'])
-print(color['bold_green'] + 'string' + color['off'])
-print(color['bold_blue'] + 'string' + color['off'])
-print(color['bold_cyan'] + 'string' + color['off'])
-print(color['bold_red'] + 'string' + color['off'])
-print(color['bold_magenta'] + 'string' + color['off'])
-print(color['bold_black'] + 'string' + color['off'])
-print(color['white'] + 'string' + color['off'])
-print(color['yellow'] + 'string' + color['off'])
-print(color['green'] + 'string' + color['off'])
-print(color['blue'] + 'string' + color['off'])
-print(color['cyan'] + 'string' + color['off'])
-print(color['red'] + 'string' + color['off'])
-print(color['magenta'] + 'string' + color['off'])
-print(color['black'] + 'string' + color['off'])
-'''
+def color(type):
+    if type == "bold_white":
+        return "\033[1;37m"
+    elif type == "bold_yellow":
+        return "\033[1;33m"
+    elif type == "bold_green":
+        return "\033[1;32m"
+    elif type == "bold_blue":
+        return "\033[1;34m"
+    elif type == "bold_cyan":
+        return "\033[1;36m"
+    elif type == "bold_red":
+        return "\033[1;31m"
+    elif type == "bold_magenta":
+        return "\033[1;35m"
+    elif type == "bold_black":
+        return "\033[1;30m"
+    elif type == "white":
+        return "\033[0;37m"
+    elif type == "yellow":
+        return "\033[0;33m"
+    elif type == "green":
+        return "\033[0;32m"
+    elif type == "blue":
+        return "\033[0;34m"
+    elif type == "cyan":
+        return "\033[0;36m"
+    elif type == "red":
+        return "\033[0;31m"
+    elif type == "magenta":
+        return "\033[0;35m"
+    elif type == "black":
+        return "\033[0;30m"
+    elif type == "off":
+        return "\033[0;0m"
+# print(color("bold_white") + "I'm white! " + color("bold_yellow") + "I'm yellow!")
+
 
 def sprint(text, speed, delay):  # Print out text with a custom speed
     for c in text:
