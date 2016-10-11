@@ -194,6 +194,7 @@ while True:
         chapsel = input("> ")
 
 # Chapter 01 - The Tale of Blu
+# TODO Finish chapter one
 while chapsel == "01" or chapsel == "1":
     print("Chapter 01 - The Tale of Blu\n\n")
     s(4)
@@ -204,9 +205,11 @@ while chapsel == "01" or chapsel == "1":
     print("To figure out why... We need to go back a few months...")
 
 # Chapter 02 - The Adventure Begins!
+# TODO Begin code for chapter two
 while chapsel == "02" or chapsel == "2":
     print("Chapter 02 - The Adventure Begins!")
 
 # Chapter 03 - Your First Pokémon
+# TODO Begin code for chapter three
 while chapsel == "03" or chapsel == "3":
     print("Chapter 03 - Your First Pokémon")

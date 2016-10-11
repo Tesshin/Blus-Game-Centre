@@ -6,6 +6,7 @@ from time import sleep
 
 
 def arithmetic():
+    # TODO Convert print messages into sprint lines
     # Non-digit rounds messages
     roundnotdigit = ["That's not a number!",
                      "You sure what you typed is a number?",
@@ -167,6 +168,7 @@ def arithmetic():
 
 
 def numguess():
+    # TODO Convert print messages into sprint lines
     num = 0
     easy = ["e", "easy", "1"]
     normal = ["n", "normal", "2"]
@@ -258,6 +260,7 @@ def numguess():
 
 
 def bluadventure():
+    # TODO Copy code from bluadventure.py into here
     # Start - program varible outputs
     start1 = ["begin", "b", "start", "s"]
     start2 = ["quit", "q", "leave", "l"]
@@ -365,5 +368,6 @@ def bluadventure():
 
 
 def guesscountry():
+    # TODO Copy code from guesscountry.py to here
     print("no code")
     # NO CODE EXISTS FOR THIS GAME YET.

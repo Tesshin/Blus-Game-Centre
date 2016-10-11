@@ -73,3 +73,5 @@ game3_capitals = ["Montgomery", "Juneau", "Phoenix", "Little Rock", "Sacramento"
                   "Oklahoma City", "Salem", "Harrisburg", "Providence", "Columbia",
                   "Pierre", "Nashville", "Austin", "Salt Lake City", "Montpelier",
                   "Richmond", "Olympia", "Charleston", "Madison", "Cheyenne"]
+
+# TODO Start writing code

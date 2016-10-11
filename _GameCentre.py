@@ -8,7 +8,7 @@ from definitions import sprint, progressbar, ask_name
 
 # Introduction - Variables
 game_choice = ""
-menu_time = 0
+menu_time = 0  # TODO Fix up some menutime issues
 give_name = ""
 asked_name = 0
 
@@ -137,7 +137,7 @@ while game_choice == "":
             game_choice = ""  # Reset gamechoice to enter back into the while loop
             break
 
-#       elif gamechoice in game_wordfind:
+#       elif gamechoice in game_wordfind:  TODO Remove wordfind
 #       print(random.choice(wordfind))
 #       time.sleep(2)
 #       print("\n"*2)
@@ -174,6 +174,7 @@ while game_choice == "":
             break
 
         elif game_choice == 'quit':  # If the user wants to quit
+            # TODO Create sprint lines for quitting
             quit()
 
         else:  # If the user selects a game that isn't in the list

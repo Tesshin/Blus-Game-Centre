@@ -46,6 +46,7 @@ def color(type):
 
 
 def sprint(text, speed, delay):  # Print out text with a custom speed
+    # TODO Add a few more sprint speeds
     for c in text:
         print(c, end=""),
         sys.stdout.flush()
@@ -74,6 +75,7 @@ def sprint(text, speed, delay):  # Print out text with a custom speed
     elif delay == "input":  # If the next code asks for an input
         sleep(0.05)
 
+
 def progressbar(iteration, total, prefix='', suffix='', decimals=1, barlength=100):
     """
     Call in a loop to create terminal progress bar
@@ -94,6 +96,7 @@ def progressbar(iteration, total, prefix='', suffix='', decimals=1, barlength=10
         sys.stdout.write('\n')
     sys.stdout.flush()
 
+# TODO Remove useless lines from usage
 '''
 #
 # Sample Usage
