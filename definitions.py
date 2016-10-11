@@ -74,7 +74,6 @@ def sprint(text, speed, delay):  # Print out text with a custom speed
     elif delay == "input":  # If the next code asks for an input
         sleep(0.05)
 
-
 def progressbar(iteration, total, prefix='', suffix='', decimals=1, barlength=100):
     """
     Call in a loop to create terminal progress bar
@@ -176,6 +175,7 @@ def ask_name():
                         # Well if it isn't Tailstar's friend Michael! Let's go play!
                         sprint("Well if it isn't Tailstar's friend Michael!", "default", "mark")
                         sprint("Let's go play!", "default", "mark")
+                    return "Michael"
                 elif name == "Riley":
                     if value == 1:
                         # So you're Riley, the guy who plays that game called Warlight right? Nice to meet you!
@@ -195,9 +195,41 @@ def ask_name():
                         sprint("Aren't you the one that created that country guessing game?", "default", "mark")
                         sprint("If so, ", "default", "comma")
                         sprint("nice to meet you and I hope we can be friends!", "default", "mark")
+                    return "Riley"
+                elif name == "Tailstar":
+                    if value == 1:
+                        # Are you actually Tailstar? Wait, I shouldn't be talking like that to you! Sorry!
+                        sprint("Are you actually Tailstar? ", "default", "mark")
+                        sprint("Wait, ", "default", "comma")
+                        sprint("I shouldn't be talking like that to you! ", "faster", "mark")
+                        sprint("Sorry!", "faster", "mark")
+                    elif value == 2:
+                        # You want me to turn you into another Pokémon? What Pokémon do you want to turn into this time?
+                        sprint("You want me to turn you into another Pokémon? ", "default", "mark")
+                        sprint("What Pokémon do you want to turn into this time?", "default", "mark")
+                    elif value == 3:
+                        # Has Storm beaten Remi in a Quick Attack race yet? I could put Storm in my Blu Games again!
+                        sprint("Has Storm beaten Remi in a Quick Attack race yet? ", "default", "mark")
+                        sprint("I could put Storm in my Blu Games again!", "default", "mark")
+                    return "Tailstar"
                 else:
-                    name = input("> ")
-                print()
+                    if value == 1:
+                        # Nice to meet you NAME! I hope we can be friends!
+                        sprint("Nice to meet you " + name + "! ", "default", "mark")
+                        sprint("I hope we can be friends!", "default", "mark")
+                    elif value == 2:
+                        # So your name is NAME... Sounds catchy to me, I like it!
+                        sprint("So your name is " + name + "...", "default", "mark")
+                        sprint("Sounds catchy to me, ", "default", "comma")
+                        sprint("I like it!", "default", "mark")
+                    elif value == 3:
+                        # NAME... NAME... I'll make sure to remember that... Um... NAME!
+                        sprint(name + "... ", "slow", "period")
+                        sprint(name + "... ", "slow", "period")
+                        sprint("I'll make sure to remember that... ", "default", "period")
+                        sprint("Um... ", "slow", "period")
+                        sprint(name + "!", "default", "mark")
+                    return name
             break
         elif give_name == "no":
             if value == 1:
