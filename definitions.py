@@ -6,6 +6,7 @@ from random import randint
 # http://stackoverflow.com/questions/4099422/printing-slowly-simulate-typing
 # http://stackoverflow.com/questions/3173320/text-progress-bar-in-the-console
 
+
 def color(type):
     if type == "bold_white":
         return "\033[1;37m"
@@ -48,7 +49,7 @@ def sprint(text, speed, delay):  # Print out text with a custom speed
     for c in text:
         print(c, end=""),
         sys.stdout.flush()
-        if speed == "normal":  # Normal printing speed
+        if speed == "default":  # Normal printing speed
             sleep(0.035)
         if speed == "slack":  # Slow printing speed
             sleep(0.05)
@@ -120,8 +121,8 @@ def ask_name():
     # Oh that reminds me! I still don't know your name yet!
     # Do you want to tell me your name? You don't have to, but it would be nice if you did!
     sprint("Oh that reminds me! ", "faster", "mark")
-    sprint("I still don't know your name yet! ", "normal", "mark")
-    sprint("Do you want to tell me your name? ", "normal", "mark")
+    sprint("I still don't know your name yet! ", "default", "mark")
+    sprint("Do you want to tell me your name? ", "default", "mark")
     sprint("You don't have to, ", "slack", "comma")
     sprint("but it would be nice if you did!\n", "faster", "period")
     print("Do you want to give your name? (Yes / No)")
@@ -133,38 +134,69 @@ def ask_name():
         if give_name == "yes":
             if value == 1:
                 # Yay! So what is your name?
-                sprint("Yay! ", "normal", "mark")
-                sprint("So what is your name?\n", "normal", "mark")
+                sprint("Yay! ", "default", "mark")
+                sprint("So what is your name?\n", "default", "mark")
             elif value == 2:
                 # You're name doesn't happen to be Tailstar, is it? If it is, then I already know you!
-                sprint("You're name doesn't happen to be Tailstar, ", "normal", "comma")
-                sprint("is it? ", "normal", "mark")
-                sprint("If it is ", "normal", 0)
+                sprint("You're name doesn't happen to be Tailstar, ", "default", "comma")
+                sprint("is it? ", "default", "mark")
+                sprint("If it is ", "default", 0)
                 sprint("then I already know you!\n", "faster", "mark")
             elif value == 3:
                 # Let's see what cool name you have!
-                sprint("Let's see what cool name you have!\n", "normal", "mark")
+                sprint("Let's see what cool name you have!\n", "default", "mark")
             elif value == 4:
                 # Tailstar told me to look out for people with names 'Riley' or 'Michael'.
                 # That doesn't happen to be you is it?
-                sprint("Tailstar told me to look out for people with names ", "normal", "quote")
-                sprint("'Riley' or ", "normal", "quote")
-                sprint("'Michael'. ", "normal", "period")
-                sprint("That doesn't happen to be you is it?\n", "normal", "mark")
+                sprint("Tailstar told me to look out for people with names ", "default", "quote")
+                sprint("'Riley' or ", "default", "quote")
+                sprint("'Michael'. ", "default", "period")
+                sprint("That doesn't happen to be you is it?\n", "default", "mark")
                 print("dasdas", "asdasdas", )
             elif value == 5:
                 # I was going to guess your name, but that would be too hard wouldn't it?
-                sprint("I was about to guess your name, ", "normal", "comma")
-                sprint("but that would be too hard wouldn't it?\n", "normal", "mark")
-            value = randint(1, 5)
+                sprint("I was about to guess your name, ", "default", "comma")
+                sprint("but that would be too hard wouldn't it?\n", "default", "mark")
             print("Please enter your name.")
             name = input("> ")
-            if name == "Michael":
-                if value == 1:
-                    print()
-                elif value == 2:
-                    print()
-            print()
+            while True:
+                value = randint(1, 3)
+                if name == "Michael":
+                    if value == 1:
+                        # Michael! You're Tailstar's friend right? Nice to meet you!
+                        sprint("Michael! ", "default", "mark")
+                        sprint("You're Tailstar's friend right? ", "default", "mark")
+                        sprint("Nice to meet you!\n", "default", "mark")
+                    elif value == 2:
+                        # Your that guy who created that RPG adventure game thing right? Nice to meet you!
+                        sprint("Your that guy who created that RPG adventure game thing right? ", "default", "mark")
+                        sprint("Nice to meet you!", "default", "mark")
+                    elif value == 3:
+                        # Well if it isn't Tailstar's friend Michael! Let's go play!
+                        sprint("Well if it isn't Tailstar's friend Michael!", "default", "mark")
+                        sprint("Let's go play!", "default", "mark")
+                elif name == "Riley":
+                    if value == 1:
+                        # So you're Riley, the guy who plays that game called Warlight right? Nice to meet you!
+                        sprint("So you're Riley, ", "default", "comma")
+                        sprint("the guy who plays that game called Warlight right? ", "default", "mark")
+                        sprint("Nice to meet you!", "default", "mark")
+                    elif value == 2:
+                        # AHHH IT'S RILEY!!! Sorry, Tailstar told me to do that if you played my game, but let's
+                        # put that aside and let's go play!
+                        sprint("AHHH IT'S RILEY!!! ", "default", "comma")
+                        sprint("Sorry, ", "slack", "comma")
+                        sprint("Tailstar told me to do that if you played my game, ", "slack", "comma")
+                        sprint("but let's put that aside and let's go play!", "default", "mark")
+                    elif value == 3:
+                        # Aren't you the one that created that country guessing game that Tailstar is
+                        # adding into my game centre? If so, nice to meet you and I hope we can be friends!
+                        sprint("Aren't you the one that created that country guessing game?", "default", "mark")
+                        sprint("If so, ", "default", "comma")
+                        sprint("nice to meet you and I hope we can be friends!", "default", "mark")
+                else:
+                    name = input("> ")
+                print()
             break
         elif give_name == "no":
             if value == 1:
@@ -196,26 +228,26 @@ def ask_name():
         else:
             if value == 1:
                 # Wait... So are you giving me your name?
-                sprint("Wait... ", "normal", "period")
-                sprint("So are you giving me your name?\n", "normal", "mark")
+                sprint("Wait... ", "default", "period")
+                sprint("So are you giving me your name?\n", "default", "mark")
             elif value == 2:
                 # I don't know what you just typed, but for all I know it isn't one of the options!
-                sprint("I don't know what you just typed, ", "normal", "comma")
-                sprint("but for all I know it isn't one of the options!\n", "normal", "mark")
+                sprint("I don't know what you just typed, ", "default", "comma")
+                sprint("but for all I know it isn't one of the options!\n", "default", "mark")
             elif value == 3:
                 # A simple question and a simple answer... Well, maybe not the answer, but typing the answer is simple!
-                sprint("A simple question and simple answer... ", "normal", "period")
-                sprint("Well, ", "normal", "comma")
-                sprint("maybe not the answer, ", "normal", "comma")
-                sprint("but typing the answer is simple!\n", "normal", "mark")
+                sprint("A simple question and simple answer... ", "default", "period")
+                sprint("Well, ", "default", "comma")
+                sprint("maybe not the answer, ", "default", "comma")
+                sprint("but typing the answer is simple!\n", "default", "mark")
             elif value == 4:
                 # Names... Such a strange thing... But back to the point, you didn't type one of the options!
                 sprint("Names... ", "slack", "period")
                 sprint("Such a strange thing... ", "slack", "period")
-                sprint("But back to the point, ", "normal", "comma")
-                sprint("you didn't type one of the options!\n", "normal", "mark")
+                sprint("But back to the point, ", "default", "comma")
+                sprint("you didn't type one of the options!\n", "default", "mark")
             elif value == 5:
                 # I thought I asked a simple yes or no question... I guess it wasn't so simple?
-                sprint("I thought I asked a simple yes or no question... ", "normal", "period")
-                sprint("I guess it wasn't so simple?", "normal", "mark")
+                sprint("I thought I asked a simple yes or no question... ", "default", "period")
+                sprint("I guess it wasn't so simple?", "default", "mark")
             give_name = input("> ")

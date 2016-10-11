@@ -51,18 +51,18 @@ print()
 while game_choice == "":
     # Introduction text
     if menu_time < 1:  # If this is the first time the user is accessing this menu
-        sprint("Welcome to my Game Centre!\n", "normal", "period")
-        sprint("I'm Blu, ", "normal", "comma")
-        sprint("and I'll be joining you in the games you play in this program!\n", "normal", "period")
-        sprint("Here are the games you can choose from:\n", "normal", "colon")
+        sprint("Welcome to my Game Centre!\n", "default", "period")
+        sprint("I'm Blu, ", "default", "comma")
+        sprint("and I'll be joining you in the games you play in this program!\n", "default", "period")
+        sprint("Here are the games you can choose from:\n", "default", "colon")
         sprint("1) Arithmetic (Multiplication)\n", "super", "list")
         sprint("2) Number Guess\n", "super", "list")
         sprint("3) Find-a-word [IN DEVELOPMENT]\n", "super", "list")
         sprint("4) Blu's Adventures [BETA]\n", "super", "list")
         sprint("5) Tactical World [IN DEVELOPMENT]\n", "super", "list")
         sprint("6) Word Jam [IN DEVELOPMENT]\n", "super", "period")
-        sprint("So, ", "normal", "comma")
-        sprint("what game do you want to play?\n", "normal", "input")
+        sprint("So, ", "default", "comma")
+        sprint("what game do you want to play?\n", "default", "input")
     else:  # If the user has already accessed this menu i.e. coming back from a game
         print("And we're back at the menu again! What game do you want to play now?")
         print("Here are the games:\n"
@@ -85,25 +85,25 @@ while game_choice == "":
         if game_choice in game_arithmetic:  # If the user selects the game Arithmetic
             if value == 1:
                 # Let's check out your maths skills!
-                sprint("Let's check out your maths skills!", "normal", "mark")
+                sprint("Let's check out your maths skills!", "default", "mark")
             elif value == 2:
                 # 6 x 5 is 11 right? No? Maybe I should just leave the maths to Tailstar...
-                sprint("6 x 5 is 11 right?", "normal", "mark")
-                sprint("No? ", "normal", "mark")
-                sprint("Maybe I should just leave the maths to Tailstar...", "normal", "period")
+                sprint("6 x 5 is 11 right?", "default", "mark")
+                sprint("No? ", "default", "mark")
+                sprint("Maybe I should just leave the maths to Tailstar...", "default", "period")
             elif value == 3:
                 # Arithmetic? Sure let's go!
-                sprint("Arithmetic? ", "normal", "mark")
-                sprint("Sure let's go!", "normal", "mark")
+                sprint("Arithmetic? ", "default", "mark")
+                sprint("Sure let's go!", "default", "mark")
             elif value == 4:
                 # So you like maths I see... Let's see how good you are!
-                sprint("So you like maths I see... ", "normal", "period")
-                sprint("Let's see how good you are!", "normal", "mark")
+                sprint("So you like maths I see... ", "default", "period")
+                sprint("Let's see how good you are!", "default", "mark")
             elif value == 5:
                 # I, Blu, challenge you to a maths battle!
-                sprint("I, ", "normal", "comma")
-                sprint("Blu, ", "normal", "comma")
-                sprint("challenge you to a maths battle!", "normal", "mark")
+                sprint("I, ", "default", "comma")
+                sprint("Blu, ", "default", "comma")
+                sprint("challenge you to a maths battle!", "default", "mark")
             s(2)
             print("\n" * 2)
             arithmetic()
@@ -112,25 +112,25 @@ while game_choice == "":
         elif game_choice in game_numguess:  # If the user selects the game Number Guess
             if value == 1:
                 # Let's see if you can beat me, the legendary Blu!
-                sprint("Let's see if you can beat me, ", "normal", "comma")
-                sprint("the legendary Blu!", "normal", "mark")
+                sprint("Let's see if you can beat me, ", "default", "comma")
+                sprint("the legendary Blu!", "default", "mark")
             elif value == 2:
                 # So you like number guessing, just like Tailstar!
-                sprint("So you like number guessing, ", "normal", "comma")
-                sprint("just like Tailstar!", "normal", "mark")
+                sprint("So you like number guessing, ", "default", "comma")
+                sprint("just like Tailstar!", "default", "mark")
             elif value == 3:
                 # Good choice! Let's begin!
-                sprint("Good choice! ", "normal", "mark")
-                sprint("Let's begin!", "normal", "mark")
+                sprint("Good choice! ", "default", "mark")
+                sprint("Let's begin!", "default", "mark")
             elif value == 4:
                 # If you're planning to play easy mode, I'm going to guess that the number will be ***!
                 number = str(randint(1, 1000))
-                sprint("If you're planning to play easy mode, ", "normal", "comma")
-                sprint("I'm going to guess that the number will be" + number + "!", "normal", "mark")
+                sprint("If you're planning to play easy mode, ", "default", "comma")
+                sprint("I'm going to guess that the number will be" + number + "!", "default", "mark")
             elif value == 5:
                 # I wonder if you'll beat me and Tailstar's high-scores... Let's play and see!
-                sprint("I wonder if you'll beat me and Tailstar's high-scores... ", "normal", "period")
-                sprint("Let's play and see!", "normal", "mark")
+                sprint("I wonder if you'll beat me and Tailstar's high-scores... ", "default", "period")
+                sprint("Let's play and see!", "default", "mark")
             s(2)
             print("\n"*2)
             numguess()
@@ -146,27 +146,27 @@ while game_choice == "":
         elif game_choice in game_cyoa:  # If the user selects the game Blu's Adventure
             if value == 1:
                 # I knew it! You are the adventurous type! COme on Tailstar is waiting for us!
-                sprint("I knew it! ", "normal", "mark")
-                sprint("You are the adventurous type! ", "normal", "mark")
-                sprint("Come on Tailstar is waiting for us!", "normal", "mark")
+                sprint("I knew it! ", "default", "mark")
+                sprint("You are the adventurous type! ", "default", "mark")
+                sprint("Come on Tailstar is waiting for us!", "default", "mark")
             elif value == 2:
                 # You like adventures too? Come join me in my adventures with Tailstar!
-                sprint("You like adventures too? ", "normal", "mark")
-                sprint("Come join me in my adventures with Tailstar!", "normal", "mark")
+                sprint("You like adventures too? ", "default", "mark")
+                sprint("Come join me in my adventures with Tailstar!", "default", "mark")
             elif value == 3:
                 # Everyone loves adventures! Especially when I'm in it! ...Right?
-                sprint("Everyone loves adventures! ", "normal", "mark")
-                sprint("Especially when I'm in it! ", "normal", "mark")
+                sprint("Everyone loves adventures! ", "default", "mark")
+                sprint("Especially when I'm in it! ", "default", "mark")
                 sprint("...Right?", "slower", "mark")
             elif value == 4:
                 # You're joining my adventure? Yay! We must hurry to the meeting point!
-                sprint("You're joining my adventure? ", "normal", "mark")
+                sprint("You're joining my adventure? ", "default", "mark")
                 sprint("Yay! ", "faster", "mark")
-                sprint("We must hurry to the meeting point!", "normal", "mark")
+                sprint("We must hurry to the meeting point!", "default", "mark")
             elif value == 5:
                 # Hopefully my adventure doesn't have that 'breaking the fourth wall' people have been talking about...
-                sprint("Hopefully my adventure doesn't have that ", "normal", "quote")
-                sprint("'breaking the fourth wall' people have been talking about...", "normal", "period")
+                sprint("Hopefully my adventure doesn't have that ", "default", "quote")
+                sprint("'breaking the fourth wall' people have been talking about...", "default", "period")
             s(2)
             print("\n"*2)
             bluadventure()
@@ -179,23 +179,23 @@ while game_choice == "":
         else:  # If the user selects a game that isn't in the list
             if value == 1:
                 # Hey that's not an option!
-                sprint("Hey that's not an option!\n", "normal", "mark")
+                sprint("Hey that's not an option!\n", "default", "mark")
             elif value == 2:
                 # I think you typed something wrong... There's no option for that.
-                sprint("I think you typed something wrong... ", "normal", "period")
-                sprint("There's no option for that.\n", "normal", "period")
+                sprint("I think you typed something wrong... ", "default", "period")
+                sprint("There's no option for that.\n", "default", "period")
             elif value == 3:
                 # Are you purposely typing it wrong to get me to talk? If you are, it's not working!
-                sprint("Are you purposely typing it wrong to get me to talk? ", "normal", "mark")
-                sprint("If you are, ", "normal", "comma")
-                sprint("it's not working!\n", "normal", "mark")
+                sprint("Are you purposely typing it wrong to get me to talk? ", "default", "mark")
+                sprint("If you are, ", "default", "comma")
+                sprint("it's not working!\n", "default", "mark")
             elif value == 4:
                 # I don't think that option you typed is an option...
-                sprint("I don't think that option you typed is an option...\n", "normal", "period")
+                sprint("I don't think that option you typed is an option...\n", "default", "period")
             elif value == 5:
                 # Let's go and play something already! Don't choose a game that you can't play!
-                sprint("Let's go and play something already! ", "normal", "mark")
-                sprint("Don't choose a game that you can't play!\n", "normal", "mark")
+                sprint("Let's go and play something already! ", "default", "mark")
+                sprint("Don't choose a game that you can't play!\n", "default", "mark")
             game_choice = input("> ")
 
     s(2)
