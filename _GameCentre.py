@@ -50,7 +50,7 @@ print()
 
 while game_choice == "":
     # Introduction text
-    if menu_time < 1:  # If this is the first time the user is accessing this menu
+    if menu_time == 0:  # If this is the first time the user is accessing this menu
         sprint("Welcome to my Game Centre!\n", "default", "period")
         sprint("I'm Blu, ", "default", "comma")
         sprint("and I'll be joining you in the games you play in this program!\n", "default", "period")
@@ -170,7 +170,23 @@ while game_choice == "":
             break
 
         elif game_choice == 'quit':  # If the user wants to quit
-            # TODO Create sprint lines for quitting
+            if value == 1:
+                # Why would you run this program if you weren't going to play anything...
+                sprint("Why would you run this program if you weren't going to play anything...", "slow", "period")
+            elif value == 2:
+                # I tell you all these games you can play you tell me you want to leave?
+                sprint("I tell you all these games you can play you tell me you want to leave?", "default", "mark")
+            elif value == 3:
+                # Tailstar created all this and you don't want to play anything?
+                sprint("Tailstar created all this and you don't want to play anything?", "default", "mark")
+            elif value == 4:
+                # Didn't you like any of the games? Tell me a game you like and I'll get Tailstar to add it in!
+                sprint("Didn't you like any of the games? ", "default", "mark")
+                sprint("Tell me a game you like and I'll get Tailstar to add it in!", "default", "mark")
+            elif value == 5:
+                # If you want to quit... I guess I can't really stop you...
+                sprint("If you want to quit... ", "default", "period")
+                sprint("I guess I can't really stop you...", "slow", "period")
             quit()
 
         else:  # If the user selects a game that isn't in the list
