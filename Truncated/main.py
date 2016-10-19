@@ -134,7 +134,7 @@ while game_choice == "":
         print("And we're back at the menu again! What game do you want to play now?")
         print("Here are the games:\n"
               "1) Arithmetic (Multiplication)\n"
-              "2) Number Guess\n"
+              "2) Number Guess\n")
     game_choice = input("> ")
 
     if asked_name == 0:  # A check to see whether the user has given his/her name.
