@@ -7,40 +7,40 @@ from random import randint
 # http://stackoverflow.com/questions/3173320/text-progress-bar-in-the-console
 
 
-def color(type):
-    if type == "bold_white":
+def color(text):
+    if text == "bold_white":
         return "\033[1;37m"
-    elif type == "bold_yellow":
+    elif text == "bold_yellow":
         return "\033[1;33m"
-    elif type == "bold_green":
+    elif text == "bold_green":
         return "\033[1;32m"
-    elif type == "bold_blue":
+    elif text == "bold_blue":
         return "\033[1;34m"
-    elif type == "bold_cyan":
+    elif text == "bold_cyan":
         return "\033[1;36m"
-    elif type == "bold_red":
+    elif text == "bold_red":
         return "\033[1;31m"
-    elif type == "bold_magenta":
+    elif text == "bold_magenta":
         return "\033[1;35m"
-    elif type == "bold_black":
+    elif text == "bold_black":
         return "\033[1;30m"
-    elif type == "white":
+    elif text == "white":
         return "\033[0;37m"
-    elif type == "yellow":
+    elif text == "yellow":
         return "\033[0;33m"
-    elif type == "green":
+    elif text == "green":
         return "\033[0;32m"
-    elif type == "blue":
+    elif text == "blue":
         return "\033[0;34m"
-    elif type == "cyan":
+    elif text == "cyan":
         return "\033[0;36m"
-    elif type == "red":
+    elif text == "red":
         return "\033[0;31m"
-    elif type == "magenta":
+    elif text == "magenta":
         return "\033[0;35m"
-    elif type == "black":
+    elif text == "black":
         return "\033[0;30m"
-    elif type == "off":
+    elif text == "off":
         return "\033[0;0m"
 # print(color("bold_white") + "I'm white! " + color("bold_yellow") + "I'm yellow!")
 
