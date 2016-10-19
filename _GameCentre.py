@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # Blu's Game Centre v1.0
 # Aiyurn © 2016
 
@@ -15,12 +16,7 @@ asked_name = 0
 # Start - Game Choice input options
 game_arithmetic = ["1", "a", "arithmetic"]
 game_numguess = ["2", "n", "number guess"]
-game_wordfind = ["3", "f", "find-a-word", "find a word"]
-game_cyoa = ["4", "c", "cyoa", "choose your own adventure"]
-
-# Start - Blu Adventure's messages
-cyoamsg = ["test",
-           "test2"]
+game_cyoa = ["3", "c", "cyoa", "choose your own adventure"]
 
 # --------------- CODE BEGINS HERE ---------------
 
@@ -28,7 +24,7 @@ print("Blu's Game Centre v1.0")
 print("Aiyurn (C) 2016\n")
 s(1)
 print("-------------------------------- WARNING --------------------------------\n"
-      "Tailstar told me to remind you beforehard to not spam the enter button!\n"
+      "Tailstar told me to remind you beforehand to not spam the enter button!\n"
       "He says that it will not only ruin the experience, but also screw up\n"
       "the code as you are inputting 'enter' for the upcoming inputs!\n"
       "-------------------------------------------------------------------------\n"
