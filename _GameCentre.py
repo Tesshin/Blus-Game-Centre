@@ -51,11 +51,11 @@ while game_choice == "":
         sprint("I'm Blu, ", "default", "comma")
         sprint("and I'll be joining you in the games you play in this program!\n", "default", "period")
         sprint("Here are the games you can choose from:\n", "default", "colon")
-        sprint("1) Arithmetic (Multiplication)\n", "fastest", "list")
-        sprint("2) Number Guess\n", "fastest", "list")
-        sprint("3) Blu's Adventures [BETA]\n", "fastest", "list")
-        sprint("4) Tactical World [IN DEVELOPMENT]\n", "fastest", "list")
-        sprint("5) Word Jam [IN DEVELOPMENT]\n", "fastest", "period")
+        sprint("1) Arithmetic (Multiplication)\n", "faster", "list")
+        sprint("2) Number Guess\n", "faster", "list")
+        sprint("3) Blu's Adventures [BETA]\n", "faster", "list")
+        sprint("4) Tactical World [IN DEVELOPMENT]\n", "faster", "list")
+        sprint("5) Word Jam [IN DEVELOPMENT]\n", "faster", "period")
         sprint("So, ", "default", "comma")
         sprint("what game do you want to play?\n", "default", "input")
     else:  # If the user has already accessed this menu i.e. coming back from a game
@@ -152,7 +152,7 @@ while game_choice == "":
             elif value == 4:
                 # You're joining my adventure? Yay! We must hurry to the meeting point!
                 sprint("You're joining my adventure? ", "default", "mark")
-                sprint("Yay! ", "faster", "mark")
+                sprint("Yay! ", "fast", "mark")
                 sprint("We must hurry to the meeting point!", "default", "mark")
             elif value == 5:
                 # Hopefully my adventure doesn't have that 'breaking the fourth wall' people have been talking about...
