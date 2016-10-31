@@ -56,9 +56,9 @@ def sprint(text, speed, delay):  # Print out text with a custom speed
             sleep(0.05)
         if speed == "slower":  # Slower printing speed
             sleep(0.06)
-        if speed == "fastest":  # Fastest printing speed
-            sleep(0.02)
         if speed == "faster":  # Faster printing speed
+            sleep(0.02)
+        if speed == "fast":  # Fast printing speed
             sleep(0.03)
     if delay == "comma":  # If the last punctuation is a comma (,)
         sleep(0.45)

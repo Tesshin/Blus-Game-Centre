@@ -106,8 +106,8 @@ while True:
             sprint("'quit'?\n", "normal", "input")
         elif value == 5:
             # Come on! Let's go already! Do you want to 'begin' or 'quit'?
-            sprint("Come on! ", "faster", "mark")
-            sprint("Let's go already! ", "faster", "mark")
+            sprint("Come on! ", "fast", "mark")
+            sprint("Let's go already! ", "fast", "mark")
             sprint("Do you want to ", "normal", "quote")
             sprint("'begin' or ", "normal", "quote")
             sprint("'quit'?\n", "normal", "input")
@@ -175,7 +175,7 @@ while True:
             sprint("There aren't that many chapters to choose from you know...\n", "default", "input")
         elif value == 2:
             # I feel like I'm talking to myself here! Well, maybe I am, but there's only so many chapters to select!
-            sprint("I feel like I'm talking to myself here! ", "faster", "mark")
+            sprint("I feel like I'm talking to myself here! ", "fast", "mark")
             sprint("Well, ", "slack", "comma")
             sprint("maybe I am, ", "normal", "comma")
             sprint("but there's only so many chapters to select!\n", "normal", "input")
@@ -186,7 +186,7 @@ while True:
         elif value == 4:
             # Are you purposely typing the wrong chapters just to get me to talk? If you are it isn't working!
             sprint("Are you purposely typing the wrong chapters just to get me to talk? ", "normal", "mark")
-            sprint("If you are it isn't working!\n", "faster", "input")
+            sprint("If you are it isn't working!\n", "fast", "input")
         elif value == 5:
             # Are you by any chance secretly Tailstar... Or am I just imagining things?
             sprint("Are you by any chance secretly Tailstar... ", "normal", "period")
