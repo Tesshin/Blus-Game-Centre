@@ -8,13 +8,13 @@ def sprint(text, speed, delay):  # Print out text with a custom speed
         sys.stdout.flush()
         if speed == "default":  # Normal printing speed
             s(0.035)
-        if speed == "slow":  # Slow printing speed
+        elif speed == "slow":  # Slow printing speed
             s(0.05)
-        if speed == "slower":  # Slower printing speed
+        elif speed == "slower":  # Slower printing speed
             s(0.06)
-        if speed == "fastest":  # Fastest printing speed
+        elif speed == "fastest":  # Fastest printing speed
             s(0.02)
-        if speed == "faster":  # Faster printing speed
+        elif speed == "faster":  # Faster printing speed
             s(0.03)
     if delay == "comma":  # If the last punctuation is a comma (,)
         s(0.45)
