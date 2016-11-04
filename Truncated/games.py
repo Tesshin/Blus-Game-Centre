@@ -4,64 +4,16 @@
 import random
 from random import randint
 from time import sleep
-from definitions import sprint
+from sprint import sprint
 
 
-def arithmetic():
+def arithmetic(name):
     # TODO Convert print messages into sprint lines
-    # Non-digit rounds messages
-    roundnotdigit = ["That's not a number!",
-                     "You sure what you typed is a number?",
-                     "You do know if you can't type out a number you'll have no chance to do this arithmetic right?",
-                     "Psst... It has to be a number!",
-                     "Hm... The code doesn't seem to like what you typed. Are you sure it's a number?"]
-
-    # Negative round numbers
-    negativenum = ["You can't use a negative number as a round!",
-                   ""]
-
-    # If selected 0 rounds
-    norounds = ["Really? You have to at least choose one round!"]
 
     # Difficulty input options
     easy = ["e", "ea", "eas", "easy"]
     medium = ["m", "me", "med", "medi", "mediu", "medium"]
     hard = ["h", "ha", "har", "hard"]
-
-    # Easy messages
-    easymsg = ["Come on, easy? I thought you would choose something harder... Oh well, let's go!",
-               "Easy mode? I guess everyone starts from somewhere...",
-               "Aww easy mode? You could do better than that!",
-               "Choosing easy mode I see... Let's see how you go!",
-               "Easy come easy go... Let's go!"]
-
-    # Arithmetic - Medium messages
-    mediummsg = ["I see that you're one of those average players. Let's see how you go!",
-                 "You've made a good choice! Let's begin!",
-                 "Medium, not too hard, not too easy. Let's go!",
-                 "Medium mode... I don't really have anything to say... Let's just start shall we?",
-                 "At least you didn't choose easy mode! Let's go!"]
-
-    # Arithmetic - Hard messages
-    hardmsg = ["Going for hard mode... You must be really good at arithmetic!",
-               "Hard mode here we come!",
-               "Not easy, not medium, but hard. I like it! Let's go!",
-               "If you think about it anything hard is easy if you know how to do it.",
-               "Ha ha ha hard! That was bad wasn't it? Let's just begin..."]
-
-    # Arithmetic - Messages if selected option isn't in difficulty
-    notdifficulty = ["There is only three difficulties to choose from...",
-                     "You didn't type a difficulty!",
-                     "Is it so difficult to choose a difficulty? That didn't work out the way I wanted to...",
-                     "I've listed the difficulties for you! All you need to do is choose one!",
-                     "I feel like you're purposely typing it wrong... Or is that just me?"]
-
-    # Arithmetic - Not digit for answers
-    answernotdigit = ["Hey that's not a number!",
-                      "I don't think that's a number...",
-                      "It has to be a number!",
-                      "Times tables won't ever have letters as an answer..."
-                      "I shouldn't really have to tell you where you typed wrong with your answer..."]
 
     # Arithmetic - Correct answers
     answercorrect = ["You got it right!",
@@ -74,61 +26,162 @@ def arithmetic():
     yesagain = ["y", "yes", "ye"]
     noagain = ["n", "no"]
 
-    # Arithmetic - Play again other options
-    other2 = ["Wait... So do you want to play again?"]
-
     playing = "y"  # Whether the game is in "Play" mode
     correct = 0
     incorrect = 0
     easytable = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
     mediumtable = [5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
     hardtable = [10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
-    value = randint(1, 5)
-    if value == 1:
-        print()
-    elif value == 2:
-        print()
-    elif value == 3:
-        print()
-    elif value == 4:
-        print()
-    elif value == 5:
-        print()
+
     while playing == "y":
-        sprint("How many rounds do you want to play?", "default", "mark")
+        value = randint(1, 3)
+        if value == 1:
+            # Ok NAME, how many rounds do you want to play?
+            sprint("Ok " + name + ", ", "default", "comma")
+            sprint("how many rounds do you want to play?\n", "default", "mark")
+        elif value == 2:
+            # Looks like we're here, how many rounds do you wnat to play NAME?
+            sprint("Looks like we're here, ", "default", "comma")
+            sprint("how many rounds do you want to play " + name + "?\n", "default", "mark")
+        elif value == 3:
+            # Now I can challenge you! How many rounds NAME?
+            sprint("Now I can challenge you! ", "fast", "mark")
+            sprint("How many rounds " + name + "?\n", "fast", "mark")
         rounds = input("> ")
-        while True:
-            if rounds.isalpha():  # Checks if the input is a number
-                print(random.choice(roundnotdigit))
+        while True:  # Checks if the input is a number
+            if rounds.isalpha():  # If input is a letter
+                value = randint(1, 5)
+                if value == 1:
+                    # That's not a number!
+                    sprint("That's not a number!\n", "default", "mark")
+                elif value == 2:
+                    # You sure what you typed is a number?
+                    sprint("You sure what you typed is a number?\n", "default", "mark")
+                elif value == 3:
+                    # If you can't type out numbers what chance do you have against this game?
+                    sprint("If you can't type numbers what chance do you have against this game?\n", "default", "mark")
+                elif value == 4:
+                    # Psst... It has to be a number!
+                    sprint("Psst... ", "slow", "period")
+                    sprint("It has to be a number!\n", "default", "mark")
+                elif value == 5:
+                    # Hm... The code doesn't seem to like what you typed. Are you sure it's a number?
+                    sprint("Hm... ", "default", "period")
+                    sprint("The code doesn't seem to like what you typed. ", "default", "period")
+                    sprint("Are you sure it's a number?", "default", "mark")
                 rounds = input("> ")
-            elif int(rounds) < 0:  # Checks if the amount of rounds is less than 0
-                print(random.choice(negativenum))
+            elif int(rounds) < 0:  # If the amount of rounds is less than 0
+                # You can't use a negative number as a round!
+                sprint("You can't use a negative number as a round!", "default", "mark")
                 rounds = input("> ")
-            elif int(rounds) == 0:  # Checks if the amount of rounds is 0
-                print(random.choice(norounds))
+            elif int(rounds) == 0:  # If the amount of rounds is 0
+                # Really? You have to at least choose one round!
+                sprint("Really? ", "default", "comma")
+                sprint("You have to at least choose one round!", "default", "mark")
+                rounds = input("> ")
             else:
                 break
         rounds = int(rounds)  # Converts rounds into a integer
-        print("What difficulty do you want to play in? (e)asy, (m)edium or (h)ard?")
+        # What difficulty do you want to play in? (e)asy, (m)edium or (h)ard?
+        sprint("What difficulty do you want to play in? ", "default", "mark")
+        sprint("(e)asy, ", "faster", "comma")
+        sprint("(m)edium or (h)ard?\n", "faster", "mark")
         difficulty = input("> ")
         while True:
-            if difficulty in easy:
-                print(random.choice(easymsg))
-                sleep(3)
-                # If user selects "easy", print random message and pause for 3 seconds
+            value = randint(1, 5)
+            if difficulty in easy:  # If user selects "easy", print random message.
+                if value == 1:
+                    # Come on, easy NAME? I thought you would choose something harder...
+                    # Oh well, let's go!
+                    sprint("Come on, ", "default", "comma")
+                    sprint("easy " + name + "? ", "default", "mark")
+                    sprint("I thought you would choose something harder... ", "default", "period")
+                    sprint("Oh well, ", "default", "comma")
+                    sprint("let's go!\n", "default", "mark")
+                elif value == 2:
+                    # Easy mode? I guess everyone starts from somewhere...
+                    sprint("Easy mode? ", "default", "mark")
+                    sprint("I guess everyone starts from somewhere...\n", "default", "period")
+                elif value == 3:
+                    # Aww easy mode? You could do better than that NAME!
+                    sprint("Aww easy mode? ", "default", "mark")
+                    sprint("You could do better than that " + name + "!\n", "default", "mark")
+                elif value == 4:
+                    # Choosing easy mode I see... Let's see how you go!
+                    sprint("Choosing easy mode I see... ", "default", "period")
+                    sprint("Let's see how you go!\n", "default", "mark")
+                elif value == 5:
+                    # Easy come easy go... Let's go!
+                    sprint("Easy come easy go... ", "default", "period")
+                    sprint("Let's go!\n", "default", "mark")
                 break
-            elif difficulty in medium:
-                print(random.choice(mediummsg))
-                sleep(3)
-                # If user selects "medium", print random message and pause for 3 seconds
+            elif difficulty in medium:  # If user selects "medium", print random message.
+                if value == 1:
+                    # So you're one of those average players NAME... Let's see how you go!
+                    sprint("So you're one of those average players " + name + "... ", "default", "period")
+                    sprint("Let's see how you go!\n", "default", "mark")
+                elif value == 2:
+                    # You've made a good choice! Let's begin!
+                    sprint("You've made a good choice! ", "default", "mark")
+                    sprint("Let's begin!\n", "default", "mark")
+                elif value == 3:
+                    # Medium, not too hard, not too easy. Let's go!
+                    sprint("Medium, ", "default", "comma")
+                    sprint("not too hard, ", "default", "comma")
+                    sprint("not too easy. ", "default", "period")
+                    sprint("Let's go!\n", "default", "mark")
+                elif value == 4:
+                    # Medium mode... I don't really have anything to say... Let's just start shall we?
+                    sprint("Medium mode... ", "slow", "period")
+                    sprint("I don't really have anything to say... ", "default", "period")
+                    sprint("Let's just start shall we?\n", "default", "mark")
+                elif value == 5:
+                    # At least you didn't choose easy mode! Let's go!
+                    sprint("At least you didn't choose easy mode! ", "default", "mark")
+                    sprint("Let's go!\n", "default", "mark")
                 break
-            elif difficulty in hard:
-                print(random.choice(hardmsg))
-                sleep(3)
-                # If user selects "hard", print random message and pause for 3 seconds
+            elif difficulty in hard:  # If user selects "hard", print random message.
+                if value == 1:
+                    # Going for hard mode NAME... You must be really good at arithmetic!
+                    sprint("Going for hard mode " + name + "...", "default", "period")
+                    sprint("You must be really good at arithmetic!\n", "default", "mark")
+                if value == 2:
+                    # Hard mode here we come!
+                    sprint("Hard mode here we come!\n", "default", "mark")
+                if value == 3:
+                    # Not easy, not medium, but hard. I like it! Let's go!
+                    sprint("Not easy, ", "default", "comma")
+                    sprint("not medium, ", "default", "comma")
+                    sprint("but hard. ", "default", "period")
+                    sprint("I like it! ", "default", "mark")
+                    sprint("Let's go!\n", "default", "mark")
+                if value == 4:
+                    # If you think about it, anything hard is easy if you know how to do it!
+                    sprint("If you think about it, ", "default", "comma")
+                    sprint("anything hard is easy if you know how to do it!\n", "default", "mark")
+                if value == 5:
+                    # Ha ha ha hard! That was bad wasn't it? Let's just begin...
+                    sprint("Ha ha ha hard! ", "slow", "mark")
+                    sprint("That was bad wasn't it? ", "default", "mark")
+                    sprint("Let's just begin...\n", "default", "period")
                 break
             else:
-                print(random.choice(notdifficulty))
+                if value == 1:
+                    # There is only three difficulties to choose from...
+                    sprint("There is only three difficulties to choose from...\n", "default", "period")
+                elif value == 2:
+                    # You didn't type a difficulty!
+                    sprint("You didn't type a difficulty!\n", "default", "mark")
+                elif value == 3:
+                    # Is it so difficult to choose a difficulty?
+                    sprint("Is it so difficult to choose a difficulty?\n", "default", "mark")
+                elif value == 4:
+                    # I've listed the difficulties for you! All you need to do is choose one!
+                    sprint("I've listed the difficulties for you! ", "default", "mark")
+                    sprint("All you need to do is choose one!\n", "default", "mark")
+                elif value == 5:
+                    sprint("I feel like you're purposely typing it wrong... ", "default", "period")
+                    sprint("Or is that just me?\n", "default", "mark")
                 difficulty = input("> ")
         while rounds > 0:
             if difficulty in easy:
@@ -143,129 +196,66 @@ def arithmetic():
                 table1 = random.choice(hardtable)
                 table2 = random.choice(hardtable)
 
-            tableanswer = table1 * table2
+            table_answer = table1 * table2
             print(table1, "x", table2, "=")
-            useranswer = input("Answer: ")
-            while not useranswer.isdigit():
-                print(random.choice(answernotdigit))
-                useranswer = input("Answer: ")
-            useranswer = int(useranswer)
-            if useranswer == tableanswer:
+            user_answer = input("Answer: ")
+            while not user_answer.isdigit():
+                value = randint(1, 5)
+                if value == 1:
+                    # Hey that's not a number!
+                    sprint("Hey that's not a number!\n", "default", "mark")
+                elif value == 2:
+                    # I don't think that's a number...
+                    sprint("I don't think that's a number...\n", "default", "period")
+                elif value == 3:
+                    # It has to be a number!
+                    sprint("It has to be a number!\n", "default", "mark")
+                elif value == 4:
+                    # This times tables will never have letters as an answer...
+                    sprint("This times tables will never have letters as an answer...\n", "default", "period")
+                elif value == 5:
+                    # I shouldn't have to say what you typed wrong with your answer...
+                    sprint("I shouldn't have to say what you typed wrong with your answer...\n", "default", "period")
+                user_answer = input("Answer: ")
+            user_answer = int(user_answer)
+            if user_answer == table_answer:
                 print(random.choice(answercorrect))
                 correct += 1
-
-            elif useranswer != tableanswer:
+            elif user_answer != table_answer:
                 print(random.choice(answerincorrect))
                 incorrect += 1
-                print("The right answer is", tableanswer)
-
+                print("The right answer is", table_answer)
             else:
-                print("If you see this message you definitely broke something.")
+                sprint("I think you broke something...", "default", "period")
             rounds -= 1  # Minus one from the rounds the user has asked to play
-        print("You got it correct:", correct, "time(s)!", "You got it wrong:", incorrect, "time(s)!")
-        print("Do you want to play again? Yes or no?")
+        sprint("You got it correct " + correct + " time(s)! ", "default", "mark")
+        sprint("You got it wrong " + incorrect + " time(s)!\n", "default", "mark")
+        sprint("Do you want to play again? (Yes / No)", "default", "input")
+        play_again = input("> ")
         while True:
-            playagain = input("> ")
-            if playagain in yesagain:
+            play_again = play_again.lower()
+            if play_again in yesagain:
                 correct = 0
                 incorrect = 0
                 playing = "y"
                 # If user plays again, reset correct and incorrect
                 break
-            elif playagain in noagain:
+            elif play_again in noagain:
                 playing = "n"
-                break
+                sprint("Do you want to go back to the main menu? (Yes / No)\n", "default", "input")
+                main_menu = input("> ")
+                while True:
+                    main_menu = main_menu.lower()
+                    if main_menu in yesagain:
+                        return "yes"
+                        break
+                    elif main_menu in noagain:
+                        return "no"
+                        break
+                    else:
+                        print("Invalid option.")
+                        main_menu = input("> ")
             else:
-                print(random.choice(other2))
-
-
-def numguess():
-    # TODO Convert print messages into sprint lines
-    num = 0
-    easy = ["e", "easy", "1"]
-    normal = ["n", "normal", "2"]
-    hard = ["h", "hard", "3"]
-    insane = ["i", "insane", "4"]
-    superinsane = ["s", "super insane", "5"]
-
-    easymsg = ["Aww easy mode? Oh well, let's go"]
-    normalmsg = ["So you're one of those average players. Now, let's begin!"]
-    hardmsg = ["I see you chose hard mode. I wish you luck."]
-    insanemsg = ["You're insane for choosing insane!"]
-    superinsanemsg = ["If you can complete this you are definitely a robot..."]
-
-    other3 = ["yo"]
-
-    print("Think you're up for a game of number guessing?")
-    sleep(1)
-    print("Here are three difficulties:\n"
-          "For Easy, type 'e'\n"
-          "For Normal, type 'n'\n"
-          "For Hard, type 'h'\n"
-          "For Insane, type 'i'\n"
-          "For Super Insane, type 's'")
-    diff = input("> ")
-
-    while True:
-        if diff in easy:
-            print(random.choice(easymsg))
-            print("You'll have 30 lives to guess a number between 1-1000")
-            lives = 30
-            num = 1000
-            break
-        elif diff in normal:
-            print(random.choice(normalmsg))
-            print("You'll have 25 lives to guess a number between 1-1500")
-            lives = 25
-            num = 1500
-            break
-        elif diff in hard:
-            print(random.choice(hardmsg))
-            print("You'll have 20 lives to guess a number between 1-2200")
-            lives = 20
-            num = 2200
-            break
-        elif diff in insane:
-            print(random.choice(insanemsg))
-            print("You'll have 10 lives to guess a number between 1-5000")
-            lives = 10
-            num = 5000
-            break
-        elif diff in superinsane:
-            print(random.choice(superinsanemsg))
-            print("You'll have 5 lives to guess an number between 1-10000")
-            lives = 5
-            num = 10000
-            break
-        else:
-            print(random.choice(other3))
-            diff = input("> ")
-
-    a = random.randint(1, num)  # Choose a random number between 1 and a number depending on the difficulty selected
-    deaths = 0
-    print("Guess a number between 1-" + str(num) + ":")
-    while lives > deaths:
-        guess = input("> ")
-        while not guess.isdigit():  # Checks if the input entered is a number
-            print("That is not a number!")
-            guess = input("> ")
-        guess = int(guess)
-        if guess > int(num):
-            print("Its between 1-" + str(num) + "... It can't go higher than", str(num) + ".")
-        elif guess < 0:
-            print("Its between 1-" + str(num) + "... It can't go lower than 0.")
-        elif guess < a:
-            print("Higher!")
-            deaths += 1
-        elif guess > a:
-            print("Lower!")
-            deaths += 1
-        if guess == a:
-            print("Correct!")
-            deaths += 1
-            print("It took you", deaths, "guess(es) this round!")
-        if deaths == lives:
-            print("One more life remaining be careful.")
-        if deaths > lives:
-            print("Game over")
-            print("good try but the answer was", a + ".")
+                sprint("Wait... ", "default", "period")
+                sprint("So do you want to play again?\n", "default", "mark")
+                play_again = input("> ")

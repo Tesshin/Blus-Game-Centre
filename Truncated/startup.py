@@ -89,23 +89,20 @@ game_selected = 0
 given_name = 0
 give_name = ""
 game_arithmetic = ["1", "a", "arithmetic"]
-game_numguess = ["2", "n", "number guess"]
 
 # INTRODUCTION
 while game_choice != "end":  # While the user hasn't selected a game.
     if menu_time == 0:  # If this is the first time the user is accessing this menu
         # Welcome to my Game Centre!
         # I'm Blu, and I'll be joining you in the games you play in this program!
-        # Here are the two games you can choose from:
+        # Here are the games you can choose from:
         # 1) Arithmetic (Multiplication)
-        # 2) Number Guess
         # So, what game do you want to play?
         sprint("Welcome to my Game Centre!\n", "default", "period")
         sprint("I'm Blu, ", "default", "comma")
         sprint("and I'll be joining you in the games you play in this program!\n", "default", "period")
-        sprint("Here are the two games you can choose from:\n", "default", "colon")
-        sprint("1) Arithmetic (Multiplication)\n", "fastest", "list")
-        sprint("2) Number Guess\n", "fastest", "comma")
+        sprint("Here are the games you can choose from:\n", "default", "colon")
+        sprint("1) Arithmetic (Multiplication)\n", "fastest", "comma")
         sprint("So, ", "default", "comma")
         sprint("what game do you want to play?\n", "default", "input")
     else:  # If the user has already accessed this menu i.e. coming back from a game
@@ -116,8 +113,7 @@ while game_choice != "end":  # While the user hasn't selected a game.
         sprint("Looks like we're back here at the menu again! ", "default", "mark")
         sprint("What game do you want to play now?\n", "default", "mark")
         sprint("Here are the games:\n", "default", "colon")
-        sprint("1) Arithmetic (Multiplication)\n", "fastest", "list")
-        sprint("2) Number Guess\n", "fastest", "input")
+        sprint("1) Arithmetic (Multiplication)\n", "fastest", "input")
 
     # GAME SELECTION
     game_choice = input("> ")
@@ -126,8 +122,6 @@ while game_choice != "end":  # While the user hasn't selected a game.
         value = randint(1, 5)
         if game_choice in game_arithmetic:  # If user selected Arithmetic
             game_selected = 1
-        elif game_choice in game_numguess:  # If user selected Number Guess
-            game_selected = 2
         else:  # If the user selects a game that isn't in the list
             if value == 1:
                 # Hey that's not an option!
@@ -346,32 +340,3 @@ while game_choice != "end":  # While the user hasn't selected a game.
             menu_time = 1
         elif play == "no":  # If the user wanted to end the program
             game_choice = "end"
-    elif game_selected == 2:  # If the user selects the game Number Guess
-        if value == 1:
-                # Let's see if you can beat me, the legendary Blu!
-                sprint("Number guessing... ", "default", "period")
-                sprint("Good choice " + username + "!\n", "default", "mark")
-        elif value == 2:
-                # So you like number guessing, just like Tailstar!
-                sprint("So you like number guessing, ", "default", "comma")
-                sprint("just like Tailstar!\n", "default", "mark")
-        elif value == 3:
-                # Good choice NAME! Let's begin!
-                sprint("Good choice " + username + "! ", "default", "mark")
-                sprint("Let's begin!\n", "default", "mark")
-        elif value == 4:
-                # If you're planning to play easy mode, I'm going to guess that the number will be ***!
-                number = str(randint(1, 1000))
-                sprint("If you're planning to play easy mode, ", "default", "comma")
-                sprint("I'm going to guess that the number will be" + number + "!\n", "default", "mark")
-        elif value == 5:
-                # I wonder if you'll beat me and Tailstar's high-scores... There's only one way to find out!
-                sprint("I wonder if you'll beat me and Tailstar's high-scores... ", "default", "period")
-                sprint("There's only one way to find out!", "default\n", "mark")
-        print("\n"*2)
-        play = numguess(username)  # Play is whether the user wants to go back to the menu or end the program.
-        if play == "yes":   # If the user wanted to go back to the menu
-            game_choice = ""
-            menu_time = 1
-        elif play == "no":  # If the user wanted to end the program
-            game_choice = "end"  # If the user selects the game Number Guess
