@@ -109,7 +109,6 @@ while game_choice != "end":  # While the user hasn't selected a game.
         # Looks like we're back here at the menu again! What game do you want to play now?
         # Here are the games:
         # 1) Arithmetic (Multiplication)
-        # 2) Number Guess
         sprint("Looks like we're back here at the menu again! ", "default", "mark")
         sprint("What game do you want to play now?\n", "default", "mark")
         sprint("Here are the games:\n", "default", "colon")
@@ -340,5 +339,6 @@ while game_choice != "end":  # While the user hasn't selected a game.
         if play == "yes":  # If the user wanted to go back to the menu
             game_choice = ""
             menu_time = 1
+            game_selected = 0
         elif play == "no":  # If the user wanted to end the program
             game_choice = "end"
