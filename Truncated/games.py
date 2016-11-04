@@ -45,8 +45,8 @@ def arithmetic(name):
             sprint("how many rounds do you want to play " + name + "?\n", "default", "mark")
         elif value == 3:
             # Now I can challenge you! How many rounds NAME?
-            sprint("Now I can challenge you! ", "fast", "mark")
-            sprint("How many rounds " + name + "?\n", "fast", "mark")
+            sprint("Now I can challenge you! ", "faster", "mark")
+            sprint("How many rounds " + name + "?\n", "faster", "mark")
         rounds = input("> ")
         while True:  # Checks if the input is a number
             if rounds.isalpha():  # If input is a letter
@@ -226,11 +226,13 @@ def arithmetic(name):
                 incorrect += 1
                 print("The right answer is", table_answer)
             else:
-                sprint("I think you broke something...", "default", "period")
+                sprint("I think you broke something...\n", "default", "period")
             rounds -= 1  # Minus one from the rounds the user has asked to play
+        correct = str(correct)
+        incorrect = str(incorrect)
         sprint("You got it correct " + correct + " time(s)! ", "default", "mark")
         sprint("You got it wrong " + incorrect + " time(s)!\n", "default", "mark")
-        sprint("Do you want to play again? (Yes / No)", "default", "input")
+        sprint("Do you want to play again? (Yes / No)\n", "default", "input")
         play_again = input("> ")
         while True:
             play_again = play_again.lower()

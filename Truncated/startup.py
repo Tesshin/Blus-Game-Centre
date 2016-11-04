@@ -18,7 +18,7 @@
 import sys
 from random import randint
 from time import sleep as s
-from games import arithmetic, numguess
+from games import arithmetic
 from sprint import sprint
 
 # --------------- DEFINITIONS ---------------
@@ -251,6 +251,7 @@ while game_choice != "end":  # While the user hasn't selected a game.
                             sprint("Oh yea " + username + "!\n", "default", "mark")
                     username = username.capitalize()
                 given_name = 1
+                asked_name = 1
             elif give_name == "no":  # If the user rejects to give their name.
                 if value == 1:
                     # Oh... That's fine, I guess I'll call you User for the time being...
@@ -277,6 +278,7 @@ while game_choice != "end":  # While the user hasn't selected a game.
                     sprint("Ok then, ", "slow", "comma")
                     sprint("off to the game we go...\n", "slow", "period")
                 given_name = 1
+                asked_name = 1
                 username = "User"
             else:
                 if value == 1:
