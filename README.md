@@ -18,7 +18,7 @@ python3 _GameCentre.py
 
 ## Authors
 
-* [@haruyuki](https://github.com/haruyuki)
+* [**@haruyuki**](https://github.com/haruyuki)
 
 ## License
 
